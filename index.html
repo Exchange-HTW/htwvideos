@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Systems Neuroscience & Neurotechnology Unit (SNNU) – Multidisciplinary research on multiscale systems neuroscience, quantitative neuromodeling and neuroimaging.">
+    <title>SNN-Unit | Saarland University</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo-link">
+                <img src="images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
+                <span class="logo-text">SNN-Unit<br><small>Systems Neuroscience</small></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="research.html" class="nav-link">Research Areas</a>
+                <a href="processes.html" class="nav-link">Processes</a>
+                <a href="dates.html" class="nav-link">Dates</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="#collaborate" class="btn-primary-outline">Contact Lab</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-label fade-in-up">
+                    <span class="glow-text">🧬 Multiscale Systems Neuroscience</span>
+                </div>
+                <h1 class="hero-title fade-in-up stagger-1">
+                    Systems Neuroscience & <br>
+                    <span class="text-gradient">Neurotechnology Unit</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up stagger-2">
+                    Directed by Prof. Dr. Dr. Daniel J. Strauss. Multidisciplinary research on multiscale systems
+                    neuroscience, quantitative neuromodeling, and neuroimaging bridging the gap between theory and
+                    clinical applications.
+                </p>
+                <div class="hero-actions fade-in-up stagger-3">
+                    <a href="#research" class="btn-primary">Explore Our Research</a>
+                    <a href="#collaborate" class="btn-secondary">Join as Researcher</a>
+                </div>
+            </div>
+
+            <div class="hero-visual-wrapper fade-in-rotate">
+                <div class="sphere">
+                    <div class="sphere-inner"></div>
+                    <img src="images/hero_visual.png" alt="Hero Visualization" class="hero-visual-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / PARTNERS -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <p class="partners-label">KEY PERSONNEL & RESEARCHERS</p>
+            <div class="partners-grid">
+                <div class="partner-item glass-card text-center" style="padding: 2rem;">
+                    <img src="https://ui-avatars.com/api/?name=Daniel+Strauss&background=random&color=fff&size=120"
+                        alt="Prof. Dr. Daniel J. Strauss"
+                        style="border-radius: 50%; margin-bottom: 1rem; width: 100px; height: 100px;">
+                    <h3 class="partner-name" style="font-size: 1.2rem;">Prof. Dr. Daniel J. Strauss</h3>
+                    <p class="partner-role">Director</p>
+                </div>
+                <div class="partner-item glass-card text-center" style="padding: 2rem;">
+                    <img src="https://ui-avatars.com/api/?name=Lars+Haab&background=random&color=fff&size=120"
+                        alt="Dr. Lars Haab"
+                        style="border-radius: 50%; margin-bottom: 1rem; width: 100px; height: 100px;">
+                    <h3 class="partner-name" style="font-size: 1.2rem;">Dr. Lars Haab</h3>
+                    <p class="partner-role">Deputy Director</p>
+                </div>
+                <div class="partner-item glass-card text-center" style="padding: 2rem;">
+                    <img src="https://ui-avatars.com/api/?name=Farah+Corona&background=random&color=fff&size=120"
+                        alt="Dr. Farah I. Corona-Strauss"
+                        style="border-radius: 50%; margin-bottom: 1rem; width: 100px; height: 100px;">
+                    <h3 class="partner-name" style="font-size: 1.2rem;">Dr. Farah I. Corona-Strauss</h3>
+                    <p class="partner-role">Lab Head, Mindscan Lab</p>
+                </div>
+                <div class="partner-item glass-card text-center" style="padding: 2rem;">
+                    <img src="https://ui-avatars.com/api/?name=Corinna+Martin&background=random&color=fff&size=120"
+                        alt="Dr. Corinna Martin"
+                        style="border-radius: 50%; margin-bottom: 1rem; width: 100px; height: 100px;">
+                    <h3 class="partner-name" style="font-size: 1.2rem;">Dr. Corinna Martin</h3>
+                    <p class="partner-role">Lab Head, Translational Lab</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH FOCUS / SERVICES -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Research <span class="text-gradient">Focus Areas</span></h2>
+                <p>Advanced studies at the intersection of neuroscience and engineering systems.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Research Area 1 -->
+                <div class="service-card-flip">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_1.png" alt="Translational Lab" class="service-image">
+                            <div class="service-overlay">
+                                <h3 class="service-title-front">Translational Lab</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <h3 class="service-title-back">Translational Lab</h3>
+                            <p class="service-description">Translating neuroscience and neuroengineering research into
+                                clinical medicine.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Clinical Medicine</span>
+                                <span class="feature-tag">Neuroengineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Area 2 -->
+                <div class="service-card-flip">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_2.png" alt="Mindscan Lab" class="service-image">
+                            <div class="service-overlay">
+                                <h3 class="service-title-front">Mindscan Lab</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <h3 class="service-title-back">Mindscan Lab</h3>
+                            <p class="service-description">Analyzing neurocognitive factors in human-machine-interaction
+                                using interactive virtual environments.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">HMI</span>
+                                <span class="feature-tag">Virtual Reality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Area 3 -->
+                <div class="service-card-flip">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_3.png" alt="Multiscale Lab" class="service-image">
+                            <div class="service-overlay">
+                                <h3 class="service-title-front">Multiscale Lab</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <h3 class="service-title-back">Multiscale Lab</h3>
+                            <p class="service-description">Fundamental research on microscopic correlates of neural
+                                processing in macroscopic electrophysiological data.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Electrophysiology</span>
+                                <span class="feature-tag">Neural Correlates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Area 4 -->
+                <div class="service-card-flip">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/service_4.png" alt="Neurocognitive Driving Test Field"
+                                class="service-image">
+                            <div class="service-overlay">
+                                <h3 class="service-title-front">Driving Test Field</h3>
+                            </div>
+                        </div>
+                        <div class="service-card-back glass-card">
+                            <h3 class="service-title-back">Driving Test Field</h3>
+                            <p class="service-description">Developing a novel approach to traffic telematics based on
+                                the neurocognitive assessment of road users.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Traffic Telematics</span>
+                                <span class="feature-tag">Neurocognitive Assessment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="glow-primary sphere-bg"></div>
+                    <img src="images/about_image.png" alt="The Lab Team" class="about-image glass-card">
+                </div>
+                <div class="about-content">
+                    <h2><span class="text-gradient">Who We Are</span></h2>
+                    <p class="lead">At the Systems Neuroscience & Neurotechnology Unit (SNNU), we bridge the gap between
+                        theoretical approaches in systems neuroscience and neurotechnological applications.</p>
+                    <p>The SNNU belongs to the Medical Faculty of Saarland University and the Faculty of Engineering at
+                        the Saarland University of Applied Sciences. Our research sites are distributed across the
+                        Neurocenter of the Saarland University Hospital, the Technikum of htw saar, and the MediClin
+                        Bosenberg Rehabilitation Center.</p>
+                    <p>We perform multidisciplinary research on multiscale systems neuroscience, quantitative
+                        neuromodeling, and neuroimaging, with a particular interest in neural correlates of attention
+                        and cognitive effort.</p>
+                    <a href="#collaborate" class="btn-primary" style="margin-top: 24px; display: inline-block;">Join
+                        Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / APPLY SECTION -->
+    <section id="collaborate" class="contact-section"
+        style="padding: 100px 0; background-color: var(--bg-dark); position: relative;">
+        <!-- Simple background glow -->
+        <div
+            style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 300px; background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, rgba(15,23,42,0) 70%); pointer-events: none;">
+        </div>
+
+        <div class="container">
+            <div class="section-header text-center fade-in-up" style="margin-bottom: 3rem;">
+                <h2>Join the <span class="text-gradient">SNN-Unit</span></h2>
+                <p>Generate a standardized application email to contact our Principal Investigators.</p>
+            </div>
+
+            <div class="contact-wrapper fade-in-up" style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
+
+                <!-- Email Generator Form -->
+                <div class="glass-card" style="padding: 2.5rem; text-align: left;">
+                    <form id="emailGeneratorForm" onsubmit="generateEmail(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="studentName"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Full
+                                    Name</label>
+                                <input type="text" id="studentName" required placeholder="Jane Doe"
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit;">
+                            </div>
+
+                            <!-- Position of Interest -->
+                            <div class="form-group">
+                                <label for="position"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Position
+                                    of Interest</label>
+                                <select id="position" required
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
+                                    <option value="" disabled selected>Select a position...</option>
+                                    <option value="Ph.D. Student">Ph.D. Student</option>
+                                    <option value="Postdoctoral Researcher">Postdoctoral Researcher</option>
+                                    <option value="Master Thesis Student">Master Thesis Student</option>
+                                    <option value="Research Assistant">Research Assistant</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Lab of Interest -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="lab"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Lab
+                                / Research Area of Interest</label>
+                            <select id="lab" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
+                                <option value="" disabled selected>Select a lab...</option>
+                                <option value="Translational Lab (Dr. C. Martin)">Translational Lab (Dr. C. Martin)
+                                </option>
+                                <option value="Mindscan Lab (Dr. F. I. Corona-Strauss)">Mindscan Lab (Dr. F. I.
+                                    Corona-Strauss)</option>
+                                <option value="Multiscale Lab (Dr. L. Haab)">Multiscale Lab (Dr. L. Haab)</option>
+                                <option value="General Initiative (Prof. Dr. D. Strauss)">General Initiative (Prof. Dr.
+                                    D. Strauss)</option>
+                            </select>
+                        </div>
+
+                        <!-- Introduction (3 paragraphs max) -->
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="intro"
+                                style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">
+                                <span>Brief Introduction & Motivation</span>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 short paragraphs)</span>
+                            </label>
+                            <textarea id="intro" required rows="6"
+                                placeholder="I am writing to express my interest in joining the SNN-Unit...&#10;&#10;My background is in [Field] and I have experience with...&#10;&#10;I am particularly interested in your work on..."
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-100"
+                            style="width: 100%; justify-content: center; padding: 1rem;">Generate Email Draft</button>
+                    </form>
+                </div>
+
+                <!-- Result Area (Hidden initially) -->
+                <div id="emailResult" class="glass-card"
+                    style="display: none; padding: 2.5rem; text-align: left; border-top: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem;">Preview & Send</h3>
+
+                    <div
+                        style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.9rem;">
+                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--text-muted);">To:</span> <span
+                                id="outTo" style="color: var(--secondary-color);"></span></div>
+                        <div style="margin-bottom: 1rem;"><span style="color: var(--text-muted);">Subject:</span> <span
+                                id="outSubject" style="color: var(--text-light); font-weight: bold;"></span></div>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                            <span style="color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Body:</span>
+                            <div id="outBody"
+                                style="color: var(--text-light); white-space: pre-wrap; line-height: 1.6;"></div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <button onclick="copyEmailData()" class="btn-primary-outline"
+                            style="flex: 1; justify-content: center; background: rgba(255,255,255,0.05);">Copy
+                            Text</button>
+                        <a id="mailToLink" href="#" class="btn-primary" style="flex: 1; justify-content: center;">Open
+                            in Mail App</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Lab Logo" class="footer-logo">
+                    <h3>SNN-Unit</h3>
+                    <p>Systems Neuroscience & Neurotechnology Unit</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Research</h4>
+                    <a href="research.html">Neural Systems</a>
+                    <a href="research.html">Brain Interfaces</a>
+                    <a href="research.html">Data Analysis</a>
+                </div>
+                <div class="footer-links">
+                    <h4>About</h4>
+                    <a href="about.html">Team</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="about.html">Publications</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p>Saarbrücken, Germany</p>
+                    <p>Email: lab@htwsaar.de</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">IN</a>
+                        <a href="#" aria-label="Twitter">TW</a>
+                        <a href="#" aria-label="GitHub">GH</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
