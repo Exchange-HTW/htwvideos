@@ -239,6 +239,10 @@ select option {
 .nav-logo {
     height: 48px;
     width: auto;
+    border-radius: 12px;
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    transition: all 0.3s ease;
 }
 
 .logo-text {
@@ -710,6 +714,9 @@ select option {
 .footer-logo {
     height: 48px;
     margin-bottom: 16px;
+    border-radius: 12px;
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
 .footer-brand h3 { margin-bottom: 8px; font-size: 20px; }
