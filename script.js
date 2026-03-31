@@ -170,10 +170,8 @@ function generateEmail(event) {
     // 2. Determine target email based on lab
     // Data from SNNU People page
     const emailMapping = {
-        "Translational Lab (Dr. C. Martin)": "corinna.bernarding@uni-saarland.de",
-        "Mindscan Lab (Dr. F. I. Corona-Strauss)": "farah.coronastrauss@uni-saarland.de",
-        "Multiscale Lab (Dr. L. Haab)": "lars.haab@uni-saarland.de",
-        "General Initiative (Prof. Dr. D. Strauss)": "lab@htwsaar.de" // Fallback standard
+        "Exchange Student": "exchange@snn-unit.de",
+        "Mindscan Lab (Dr. F. I. Corona-Strauss)": "farah.coronastrauss@uni-saarland.de"
     };
 
     const targetEmail = emailMapping[lab] || "lab@htwsaar.de";
