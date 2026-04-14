@@ -488,8 +488,9 @@
                     clickOffset = (timer / 150) * 8;
                 } else if (timer < 300) {
                     // Subir regreso
-                    if (timer - dt <= 150) {
-                        // Iluminar la palabra azul momentáneamente cuando toca el "fondo" del clic
+                    if (!targetEl.dataset.animHl) {
+                        targetEl.dataset.animHl = "true";
+                        
                         const originalColor = targetEl.style.color;
                         const originalShadow = targetEl.style.textShadow;
                         const originalTrans = targetEl.style.transition;
