@@ -146,6 +146,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========================================================================= */
+    /* PAUSE OUT-OF-VIEW VIDEOS */
+    /* ========================================================================= */
+    const videoIframes = document.querySelectorAll('.video-container iframe');
+    if (videoIframes.length > 0) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    const iframe = entry.target;
+                    if (iframe.contentWindow) {
+                        iframe.contentWindow.postMessage(JSON.stringify({
+                            event: 'command',
+                            func: 'pauseVideo',
+                            args: []
+                        }), '*');
+                    }
+                }
+            });
+        }, { threshold: 0 });
+        
+        videoIframes.forEach(iframe => videoObserver.observe(iframe));
+    }
+
+    /* ========================================================================= */
     /* UTILS */
     /* ========================================================================= */
     function debounce(func, wait) {
@@ -230,5 +253,47 @@ function copyEmailData() {
     }).catch(err => {
         console.error('Failed to copy: ', err);
         alert("Failed to copy text. Please select and copy manually.");
+    });
+}
+
+// --- CLICK TOOLTIPS LOGIC ---
+function toggleTooltip(element, event) {
+    event.stopPropagation();
+    
+    // Close other tooltips first
+    document.querySelectorAll('.custom-tooltip-trigger').forEach(el => {
+        if (el !== element) {
+            el.classList.remove('active');
+        }
+    });
+
+    // Toggle this tooltip
+    element.classList.toggle('active');
+}
+
+// Close when clicking outside
+document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-tooltip-trigger').forEach(el => {
+        el.classList.remove('active');
+    });
+});
+
+function copyTooltipText(element, event) {
+    event.stopPropagation(); // prevent tooltip from closing immediately
+    
+    const textToCopy = element.getAttribute('data-text');
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = element.innerHTML;
+        element.innerHTML = "¡Copiado!";
+        element.style.color = "#4ade80"; // Light green for success
+        
+        setTimeout(() => {
+            element.innerHTML = originalText;
+            element.style.color = "";
+            const parent = element.closest('.custom-tooltip-trigger');
+            if(parent) parent.classList.remove('active'); // Close bubble
+        }, 800);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
     });
 }

@@ -31,6 +31,7 @@
 
             <div class="nav-links">
                 <a href="#videos" class="nav-link">Videos</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="#collaborate" class="btn-primary-outline">Contact Lab</a>
             </div>
 
@@ -46,15 +47,52 @@
         <div class="container">
             <div class="section-header text-center fade-in-up">
                 <h2>¿Listo para impulsar <span class="text-gradient">tu futuro en ingeniería?</span></h2>
-                
-                <div class="intro-text-wrapper" style="text-align: justify; line-height: 1.8; max-width: 900px; margin: 2.5rem auto 1rem; color: var(--text-muted); font-size: 1.1rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
-                    <p style="margin-bottom: 1.5rem;"><strong>Si te encuentras estudiando tus últimos semestres en Ingeniería Biomédica, Eléctrica o Electrónica</strong> en el Instituto Tecnológico de Mérida, te invitamos a realizar tus prácticas profesionales con nosotros en el <strong>SNNU (Systems Neuroscience & Neurotechnology Unit)</strong>, ubicado en htw saar, universidad socia del ITM.</p>
 
-                    <p style="margin-bottom: 1.5rem;">Nuestros laboratorios se encuentran en <strong>Saarbrücken, Alemania</strong>, y realizamos investigación multidisciplinaria en neurociencia de sistemas a múltiples escalas, neuromodelado cuantitativo y neuroimagen.</p>
+                <div class="intro-text-wrapper"
+                    style="text-align: justify; line-height: 1.8; max-width: 900px; margin: 2.5rem auto 1rem; color: var(--text-muted); font-size: 1.1rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
+                    <p style="margin-bottom: 1.5rem;"><strong>Si te encuentras estudiando tus últimos semestres en
+                            Ingeniería Biomédica, Eléctrica o Electrónica</strong> en el Instituto Tecnológico de
+                        Mérida, te invitamos a realizar tus prácticas profesionales con nosotros en el <strong>SNNU
+                            (Systems Neuroscience & Neurotechnology Unit)</strong>, ubicado en htw saar, universidad
+                        socia del ITM.</p>
 
-                    <p style="margin-bottom: 1.5rem;">Durante tu estancia, podrás trabajar bajo la supervisión de alguno de nuestros colaboradores en una de nuestras líneas de investigación. Para más detalles, puedes visitar nuestra página web. Nuestros colaboradores hablan alemán, inglés y, en algunos casos, español.</p>
+                    <p style="margin-bottom: 1.5rem;">Nuestros laboratorios se encuentran en <span
+                            class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Saarbrücken<span
+                                class="custom-tooltip image-tooltip">
+                                <span class="saarbrucken-slideshow">
+                                    <img src="images/Rathaus.png" alt="Saarbrücken Day">
+                                    <img src="images/RathausNacht.png" alt="Saarbrücken Night"
+                                        class="saarbrucken-night">
+                                </span>
+                            </span></span><strong>,
+                            <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Alemania<span
+                                    class="custom-tooltip image-tooltip">
+                                    <span class="slideshow-6">
+                                        <img src="images/1-Frank.png" alt="Alemania Placeholder 1">
+                                        <img src="images/2-Col.png" alt="Alemania Placeholder 2">
+                                        <img src="images/3-Hamburg.png" alt="Alemania Placeholder 3">
+                                        <img src="images/4-Bavaria.png" alt="Alemania Placeholder 4">
+                                        <img src="images/5-Bavaria.png" alt="Alemania Placeholder 5">
+                                        <img src="images/6-Bavaria.png" alt="Alemania Placeholder 6">
+                                    </span>
+                                </span></span></strong>, y realizamos investigación multidisciplinaria en neurociencia
+                        de sistemas
+                        a múltiples escalas, neuromodelado cuantitativo y neuroimagen.</p>
 
-                    <p style="margin-bottom: 0;">Para más información, contáctanos en el correo <a href="mailto:exchange@snn-unit.de" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">exchange@snn-unit.de</a>. Si deseas conocer más sobre el proceso interno dentro del Tecnológico, puedes contactar a la Ing. Margarita Álvarez.</p>
+                    <p style="margin-bottom: 1.5rem;">Durante tu estancia, podrás trabajar bajo la supervisión de alguno
+                        de nuestros colaboradores en una de nuestras líneas de investigación. Para más detalles, puedes
+                        visitar nuestra página web. Nuestros colaboradores hablan alemán, inglés y, en algunos casos,
+                        español.</p>
+
+                    <p style="margin-bottom: 0;">Para más información, contáctanos en el correo <a
+                            href="mailto:exchange@snn-unit.de"
+                            style="color: var(--primary-color); text-decoration: none; font-weight: 500;">exchange@snn-unit.de</a>
+                        Si deseas conocer más sobre el proceso interno dentro del Tecnológico, puedes contactar a la
+                        <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Ing. Margarita
+                            Álvarez<span class="custom-tooltip copy-tooltip" style="cursor: pointer;"
+                                onclick="copyTooltipText(this, event)"
+                                data-text="maria.ac@merida.tecnm.mx">maria.ac@merida.tecnm.mx</span></span>.
+                    </p>
                 </div>
             </div>
 
@@ -63,7 +101,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/LhLWWKAsMao?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/LhLWWKAsMao?rel=0&enablejsapi=1"
                             title="Researcher Interview 1"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -80,7 +118,8 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/1ObJGx-exKY?rel=0" title="Lab Facility Tour"
+                        <iframe src="https://www.youtube-nocookie.com/embed/1ObJGx-exKY?rel=0&enablejsapi=1"
+                            title="Lab Facility Tour"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
@@ -95,7 +134,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/MSC_u6PLvG4?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/MSC_u6PLvG4?rel=0&enablejsapi=1"
                             title="Placeholder Video 5"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -112,7 +151,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/wglx7SRBNeg?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/wglx7SRBNeg?rel=0&enablejsapi=1"
                             title="Researcher Interview 2"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -129,7 +168,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/dDksJWfYMS8?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/dDksJWfYMS8?rel=0&enablejsapi=1"
                             title="Neurotechnologies Explained"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -147,7 +186,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/DJCyAa9iB6A?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/DJCyAa9iB6A?rel=0&enablejsapi=1"
                             title="Placeholder Video 6"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -164,7 +203,7 @@
                 <div class="video-card glass-card">
                     <div class="video-container">
                         <!-- Placeholder YouTube Embed - Replace src with actual link -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/hdXrnBB4HDI?rel=0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/hdXrnBB4HDI?rel=0&enablejsapi=1"
                             title="Placeholder Video 7"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -174,6 +213,24 @@
                         <p>Egresada del Tecnológico de Mérida. Su proyecto de tesis consistió en desarrollar estímulos
                             auditivos para experimentos realizados en un simulador de coche, utilizando herramientas de
                             inteligencia artificial.</p>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <!-- Placeholder YouTube Embed - Replace src with actual link -->
+                        <iframe src="https://www.youtube-nocookie.com/embed/q8vtiOm6cys?rel=0&enablejsapi=1"
+                            title="Placeholder Video 8"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Gerardo Díaz Ramírez – Análisis de Señales EEG</h3>
+                        <p>Egresado de Ingeniería Biomédica del Tecnológico de Mérida. Realizó su residencia en 2025
+                            analizando señales electroencefalográficas para evaluar niveles de atención mediante
+                            procesamiento digital. Su experiencia lo motivó a quedarse en Alemania, donde actualmente
+                            cursa el segundo semestre de la maestría en Neural Engineering.</p>
                     </div>
                 </div>
             </div>
@@ -299,6 +356,7 @@
                 <div class="footer-links">
                     <h4>Categories</h4>
                     <a href="#videos">Videos</a>
+                    <a href="faq.html">FAQ</a>
                     <a href="#collaborate">Contact</a>
                 </div>
                 <div class="footer-links">
@@ -308,7 +366,8 @@
                     <div class="social-links">
                         <a href="#" aria-label="Instagram">IG</a>
                         <a href="#" aria-label="Facebook">FB</a>
-                        <a href="#" aria-label="Youtube">YT</a>
+                        <a href="https://www.youtube.com/@snnUnit" target="_blank" rel="noopener noreferrer"
+                            aria-label="Youtube">YT</a>
                     </div>
                 </div>
             </div>
@@ -319,6 +378,153 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- TUTORIAL ANIMATION SCRIPT -->
+    <script>
+    (function() {
+        // Ejecutar solo una vez por sesion (comentado temporalmente para pruebas)
+        // if (sessionStorage.getItem('tutorialAnimVisto')) return;
+        // sessionStorage.setItem('tutorialAnimVisto', 'true');
+
+        // 1. Crear Canvas sobre toda la página
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none'; // No interfiere con clics reales
+        canvas.style.zIndex = '999999';
+        canvas.style.transition = 'opacity 1s ease';
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let w, h;
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // 2. Encontrar palabras interactivas
+        const targets = Array.from(document.querySelectorAll('.custom-tooltip-trigger')).filter(el => {
+            const rect = el.getBoundingClientRect();
+            return rect.width > 0 && rect.height > 0;
+        });
+
+        if (targets.length === 0) {
+            canvas.remove();
+            return;
+        }
+
+        // 3. Dibujar "mano de puntitos"
+        function drawDottedHand(x, y, clickYOffset) {
+            ctx.save();
+            ctx.translate(x, y + clickYOffset);
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+            ctx.shadowBlur = 6;
+            
+            // Coordenadas relativas para formar una manito apuntando diagonal
+            const dots = [
+                [0, 0], [0, 5], [0, 10], // Dedo índice
+                [6, 12], [12, 14], [18, 16], // Resto de dedos
+                [-7, 16], [-5, 21], // Pulgar
+                [0, 18], [6, 20], [12, 22], // Centro palma
+                [-2, 25], [4, 27], [10, 29] // Muñeca
+            ];
+            
+            dots.forEach(([dx, dy]) => {
+                ctx.beginPath();
+                ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            ctx.restore();
+        }
+
+        // 4. Bucle de Animación
+        let currentIndex = 0;
+        let cursorX = w / 2;
+        let cursorY = h + 50; 
+        let state = 'moving'; // 'moving', 'clicking'
+        let timer = 0;
+        let lastTime = performance.now();
+        let clickOffset = 0;
+
+        function animate(time) {
+            const dt = time - lastTime;
+            lastTime = time;
+            
+            ctx.clearRect(0, 0, w, h);
+
+            if (currentIndex >= targets.length) {
+                // Fin del tutorial: desaparecer el canvas
+                canvas.style.opacity = '0';
+                setTimeout(() => canvas.remove(), 1000);
+                return;
+            }
+
+            const targetEl = targets[currentIndex];
+            const rect = targetEl.getBoundingClientRect();
+            // Calcular centro inferior de la palabra
+            const targetX = rect.left + rect.width / 2;
+            const targetY = rect.bottom + 5; // Un poco de espacio
+
+            if (state === 'moving') {
+                // Mover suavemente hacia el objetivo
+                cursorX += (targetX - cursorX) * 0.05;
+                cursorY += (targetY - cursorY) * 0.05;
+
+                const dist = Math.hypot(targetX - cursorX, targetY - cursorY);
+                if (dist < 4) {
+                    state = 'clicking';
+                    timer = 0;
+                }
+            } else if (state === 'clicking') {
+                timer += dt;
+                if (timer < 150) {
+                    // Bajar cursor simulando "presionar"
+                    clickOffset = (timer / 150) * 8;
+                } else if (timer < 300) {
+                    // Subir regreso
+                    if (timer - dt <= 150) {
+                        // Iluminar la palabra azul momentáneamente cuando toca el "fondo" del clic
+                        const originalColor = targetEl.style.color;
+                        const originalShadow = targetEl.style.textShadow;
+                        const originalTrans = targetEl.style.transition;
+                        
+                        targetEl.style.transition = 'all 0.3s ease';
+                        targetEl.style.color = '#3b82f6';
+                        targetEl.style.textShadow = '0 0 10px rgba(59, 130, 246, 0.8)';
+                        
+                        setTimeout(() => {
+                            targetEl.style.color = originalColor;
+                            targetEl.style.textShadow = originalShadow;
+                            setTimeout(() => { targetEl.style.transition = originalTrans; }, 300);
+                        }, 500);
+                    }
+                    clickOffset = 8 - ((timer - 150) / 150) * 8;
+                } else if (timer > 800) {
+                    // Siguiente palabra
+                    state = 'moving';
+                    clickOffset = 0;
+                    currentIndex++;
+                }
+            }
+
+            drawDottedHand(cursorX, cursorY, clickOffset);
+            requestAnimationFrame(animate);
+        }
+
+        setTimeout(() => {
+            lastTime = performance.now();
+            requestAnimationFrame(animate);
+        }, 1000);
+
+    })();
+    </script>
+
 </body>
 
 </html>
