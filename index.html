@@ -260,12 +260,12 @@
                 <p>Generate a standardized application email to contact our Principal Investigators.</p>
             </div>
 
-            <div class="contact-wrapper fade-in-up" style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
+            <div class="contact-wrapper fade-in-up">
 
                 <!-- Email Generator Form -->
-                <div class="glass-card" style="padding: 2.5rem; text-align: left;">
+                <div class="glass-card contact-form-card">
                     <form id="emailGeneratorForm" onsubmit="generateEmail(event)">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="contact-form-grid">
                             <!-- Name -->
                             <div class="form-group">
                                 <label for="studentName"
@@ -323,8 +323,8 @@
                 </div>
 
                 <!-- Result Area (Hidden initially) -->
-                <div id="emailResult" class="glass-card"
-                    style="display: none; padding: 2.5rem; text-align: left; border-top: 4px solid var(--primary-color);">
+                <div id="emailResult" class="glass-card contact-form-card"
+                    style="display: none; border-top: 4px solid var(--primary-color);">
                     <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem;">Preview & Send</h3>
 
                     <div
@@ -340,12 +340,9 @@
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                        <button onclick="copyEmailData()" class="btn-primary-outline"
-                            style="flex: 1; justify-content: center; background: rgba(255,255,255,0.05);">Copy
-                            Text</button>
-                        <a id="mailToLink" href="#" class="btn-primary" style="flex: 1; justify-content: center;">Open
-                            in Mail App</a>
+                    <div class="contact-result-actions">
+                        <button onclick="copyEmailData()" class="btn-primary-outline">Copy Text</button>
+                        <a id="mailToLink" href="#" class="btn-primary">Open in Mail App</a>
                     </div>
                 </div>
 

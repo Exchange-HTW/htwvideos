@@ -1120,6 +1120,161 @@ select option {
 }
 
 /* ========================================================================= */
+/* RESPONSIVE SUB-SECTIONS (FAQ & CONTACT) */
+/* ========================================================================= */
+
+/* Contact Section layout */
+.contact-form-card {
+    padding: 2.5rem;
+    text-align: left;
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-result-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-result-actions .btn-primary-outline {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+}
+
+.contact-result-actions .btn-primary {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .contact-form-card {
+        padding: 1.5rem;
+    }
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-result-actions {
+        flex-direction: column;
+    }
+}
+
+/* FAQ Header layout */
+.faq-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.faq-title {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+}
+
+.faq-main-heading {
+    margin: 0;
+    font-size: clamp(60px, 10vw, 160px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.faq-subtitle {
+    font-size: clamp(20px, 3vw, 48px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.faq-logos {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.faq-logo-img-wrapper {
+    height: 65px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.faq-logo-img {
+    height: 310px;
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+    left: -183px;
+    top: -118px;
+}
+
+.faq-logo-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.faq-logo-ampersand {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 2px 0;
+}
+
+@media (max-width: 900px) {
+    .faq-header-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .faq-title {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .faq-logos {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .faq-logo-img-wrapper {
+        height: auto;
+        width: auto;
+        position: static;
+        margin-bottom: 24px;
+    }
+
+    .faq-logo-img {
+        height: 180px;
+        position: static;
+    }
+    
+    .faq-logo-main {
+        font-size: 24px;
+    }
+}
+
+/* ========================================================================= */
 /* CUSTOM CLICK TOOLTIPS */
 /* ========================================================================= */
 .custom-tooltip-trigger {
