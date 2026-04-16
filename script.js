@@ -291,9 +291,204 @@ function copyTooltipText(element, event) {
             element.innerHTML = originalText;
             element.style.color = "";
             const parent = element.closest('.custom-tooltip-trigger');
-            if(parent) parent.classList.remove('active'); // Close bubble
+                if(parent) parent.classList.remove('active'); // Close bubble
         }, 800);
     }).catch(err => {
         console.error('Failed to copy: ', err);
     });
 }
+
+/* ========================================================================= */
+/* FAQ GALLERY LOGIC (HOVER INLINE ROCOLA / COVERFLOW) */
+/* ========================================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const faqGrid = document.getElementById('faq-gallery-grid');
+    if (!faqGrid) return; // Only run on FAQ page
+
+    const faqGroups = [
+        { id: 1, start: 1, end: 5 },
+        { id: 2, start: 6, end: 10 },
+        { id: 3, start: 11, end: 15 },
+        { id: 4, start: 16, end: 20 },
+        { id: 5, start: 21, end: 25 },
+        { id: 6, start: 26, end: 31 } // 6 images in last group
+    ];
+
+    // Generate thumbnails Grid
+    faqGroups.forEach(group => {
+        const numSlides = group.end - group.start + 1;
+        const groupEl = document.createElement('div');
+        groupEl.className = 'faq-group-thumbnail';
+        groupEl.setAttribute('data-group', group.id);
+        
+        let slidesHtml = '';
+        for (let i = group.start; i <= group.end; i++) {
+            slidesHtml += `<div class="swiper-slide"><img src="images/${i}.png" alt="FAQ diapositiva ${i}"></div>`;
+        }
+
+        groupEl.innerHTML = `
+            <div class="faq-static-cover">
+                <img src="images/${group.start}.png" alt="FAQ Grupo ${group.id}">
+                <div class="faq-group-overlay">
+                    <span>Ver ${numSlides} diapositivas</span>
+                </div>
+            </div>
+            
+            <div class="swiper faq-swiper dynamic-swiper">
+                <div class="swiper-wrapper">
+                    ${slidesHtml}
+                </div>
+            </div>
+        `;
+        faqGrid.appendChild(groupEl);
+
+        const swiperContainer = groupEl.querySelector('.faq-swiper');
+        let swiper = null;
+
+        // Mouse Enter (Activa el Coverflow y lo hace visible)
+        groupEl.addEventListener('mouseenter', () => {
+            groupEl.classList.add('is-active');
+            
+            // Inicializar swiper si no existe, solo cuando es necesario
+            if(!swiper) {
+                swiper = new Swiper(swiperContainer, {
+                    effect: 'coverflow',
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: 1.5,
+                    initialSlide: 0,
+                    coverflowEffect: {
+                        rotate: 20,
+                        stretch: 0,
+                        depth: 150,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    speed: 400
+                });
+            } else {
+                swiper.update();
+            }
+        });
+
+        // Mouse Leave (Desactiva y vuelve a la portada)
+        groupEl.addEventListener('mouseleave', () => {
+            groupEl.classList.remove('is-active');
+        });
+
+        // Click: Abrir la foto actual en Lightbox
+        groupEl.addEventListener('click', (e) => {
+            if (groupEl.classList.contains('is-active') && swiper) {
+                const activeSlideIndex = swiper.activeIndex;
+                openLightbox(group, activeSlideIndex);
+            }
+        });
+
+        // Desplazamiento moviendo el ratón a los lados (Proporcional a la caja)
+        groupEl.addEventListener('mousemove', (e) => {
+            if (!groupEl.classList.contains('is-active') || !swiper) return;
+
+            const rect = groupEl.getBoundingClientRect();
+            // Evitar valores negativos o mayores al ancho
+            let x = e.clientX - rect.left;
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            const percentage = x / rect.width; // 0.0 to 1.0
+
+            let targetSlide = Math.floor(percentage * numSlides);
+            if (targetSlide >= numSlides) targetSlide = numSlides - 1;
+            
+            swiper.slideTo(targetSlide);
+        });
+    });
+
+    /* --- LIGHTBOX DOM & Logic --- */
+    const lightbox = document.createElement('div');
+    lightbox.id = 'faq-lightbox';
+    lightbox.className = 'faq-lightbox';
+    lightbox.innerHTML = `
+        <button id="faq-lightbox-close" class="faq-lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <button id="faq-lightbox-prev" class="faq-lightbox-nav prev" aria-label="Previous image">&bull;</button>
+        <button id="faq-lightbox-next" class="faq-lightbox-nav next" aria-label="Next image">&bull;</button>
+        <img id="faq-lightbox-img" src="" alt="Zoomed FAQ">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = document.getElementById('faq-lightbox-img');
+    const lightboxCloseBtn = document.getElementById('faq-lightbox-close');
+    const lightboxPrevBtn = document.getElementById('faq-lightbox-prev');
+    const lightboxNextBtn = document.getElementById('faq-lightbox-next');
+
+    let currentLightboxGroup = null;
+    let currentLightboxIndex = 0;
+
+    function openLightbox(group, index) {
+        currentLightboxGroup = group;
+        currentLightboxIndex = index;
+        lightboxImg.src = `images/${group.start + index}.png`;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateLightboxNav();
+    }
+
+    function updateLightboxNav() {
+        if (!currentLightboxGroup) return;
+        const totalSlides = currentLightboxGroup.end - currentLightboxGroup.start + 1;
+        lightboxPrevBtn.style.display = currentLightboxIndex > 0 ? 'flex' : 'none';
+        lightboxNextBtn.style.display = currentLightboxIndex < totalSlides - 1 ? 'flex' : 'none';
+    }
+
+    function lightboxNavigate(direction) {
+        if (!currentLightboxGroup) return;
+        const totalSlides = currentLightboxGroup.end - currentLightboxGroup.start + 1;
+        
+        currentLightboxIndex += direction;
+        
+        // Limits
+        if (currentLightboxIndex < 0) currentLightboxIndex = 0;
+        if (currentLightboxIndex >= totalSlides) currentLightboxIndex = totalSlides - 1;
+        
+        lightboxImg.src = `images/${currentLightboxGroup.start + currentLightboxIndex}.png`;
+        updateLightboxNav();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => lightboxImg.src = '', 300); // clear after fade out
+    }
+
+    lightboxCloseBtn.addEventListener('click', closeLightbox);
+    
+    lightboxPrevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxNavigate(-1);
+    });
+
+    lightboxNextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxNavigate(1);
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        // Cierra si se hace clic fuera de la imagen y fuera de los botones
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Soporte para teclado (Flechas direccionales y ESC)
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'ArrowLeft') {
+            lightboxNavigate(-1);
+        } else if (e.key === 'ArrowRight') {
+            lightboxNavigate(1);
+        } else if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+
+});

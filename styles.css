@@ -1249,3 +1249,305 @@ select option {
     22% { opacity: 0; }
     100% { opacity: 0; }
 }
+
+/* =========================================
+   FAQ Gallery Grid & Thumbnail (Hover Coverflow)
+========================================= */
+.faq-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-group-thumbnail {
+    position: relative;
+    border-radius: 20px;
+    cursor: crosshair; /* Indicates interactability */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, z-index 0s 0.4s;
+    background: rgba(15, 15, 20, 0.95);
+    aspect-ratio: 4/3; /* Enforce consistent dimensions */
+    z-index: 1; 
+}
+
+/* Base style without active scale to prevent overlapping issues from z-index */
+.faq-group-thumbnail.is-active {
+    transform: scale(1.65);
+    z-index: 100 !important; /* Jump above others immediately */
+    box-shadow: 0 30px 80px rgba(0, 163, 255, 0.4);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; /* No z-index delay here */
+}
+
+/* Inner borders */
+.faq-group-thumbnail::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.faq-static-cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.faq-static-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.faq-group-thumbnail:hover .faq-static-cover img {
+    transform: scale(1.05); /* Slight bounce before turning into coverflow */
+}
+
+/* Hide static cover when active */
+.faq-group-thumbnail.is-active .faq-static-cover {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.faq-group-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 1; /* Always visible for user context */
+    transition: opacity 0.3s ease;
+    z-index: 6;
+    pointer-events: none;
+}
+
+.faq-group-thumbnail.is-active .faq-group-overlay {
+    opacity: 0;
+}
+
+.faq-group-overlay span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: rgba(0, 163, 255, 0.8);
+    padding: 6px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+
+/* =========================================
+   FAQ Swiper Container (Dynamic Hover)
+========================================= */
+.dynamic-swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Below cover initially */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(10, 10, 15, 0.95);
+}
+
+.faq-group-thumbnail.is-active .dynamic-swiper {
+    z-index: 8; /* Raise above static cover */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Swiper classes adjustments */
+.dynamic-swiper .swiper-wrapper {
+    align-items: center; /* Center slides vertically */
+}
+
+.dynamic-swiper .swiper-slide {
+    width: 70%; /* Shows adjacent slides slightly */
+    height: 85%; /* Paddings top and bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    background: transparent;
+}
+
+.dynamic-swiper .swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================
+   FAQ Lightbox (Zoom on Click)
+========================================= */
+.faq-lightbox {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 100000;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.faq-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.faq-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    object-fit: contain;
+}
+
+.faq-lightbox.active img {
+    transform: scale(1);
+}
+
+.faq-lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100001;
+    transition: all 0.3s ease;
+}
+
+.faq-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+
+.faq-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: transparent; /* Hide raw text */
+    font-size: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100001;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Core glowing space dot */
+.faq-lightbox-nav::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 4px rgba(0, 163, 255, 0.8),
+                0 0 30px 8px rgba(0, 163, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: stellar-pulse 2s infinite alternate;
+}
+
+/* Orbital dashed ring for the space vibe */
+.faq-lightbox-nav::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    animation: stellar-rotate 10s linear infinite;
+    opacity: 0.5;
+}
+
+.faq-lightbox-nav:hover::before {
+    transform: scale(1.5);
+    box-shadow: 0 0 20px 6px rgba(0, 163, 255, 1),
+                0 0 40px 15px rgba(255, 255, 255, 0.3);
+}
+
+.faq-lightbox-nav:hover::after {
+    opacity: 1;
+    width: 60px;
+    height: 60px;
+    border: 1px dashed rgba(0, 163, 255, 0.8);
+    animation: stellar-rotate 4s linear infinite;
+}
+
+.faq-lightbox-nav.prev {
+    left: 20px;
+}
+
+.faq-lightbox-nav.next {
+    right: 20px;
+}
+
+@keyframes stellar-pulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes stellar-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .faq-lightbox-nav {
+        width: 60px;
+        height: 60px;
+    }
+    .faq-lightbox-nav.prev { left: 5px; }
+    .faq-lightbox-nav.next { right: 5px; }
+    .faq-lightbox-close { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; }
+}
