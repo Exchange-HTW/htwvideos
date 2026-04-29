@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FAQ - Systems Neuroscience & Neurotechnology Unit (SNNU).">
-    <title>FAQ | SNN-Unit | Saarland University</title>
+    <meta name="description" content="FAQ - Systems Neuroscience &amp; Neurotechnology Unit (SNNU) — ITM.">
+    <title>FAQ | SNN-Unit | Saarland University — ITM</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../images/logo.png" type="image/png">
     <style>
         body {
             display: flex;
@@ -38,7 +38,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
+                <img src="../images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
                 <span class="logo-text">SNN-Unit<br><small>Systems Neuroscience</small></span>
             </a>
 
@@ -65,11 +65,11 @@
                 </div>
                 <div class="faq-logos">
                     <div class="faq-logo-img-wrapper">
-                        <img src="images/logo.png" alt="University Logo" class="faq-logo-img">
+                        <img src="../images/logo.png" alt="University Logo" class="faq-logo-img">
                     </div>
                     <div class="faq-logo-main">
                         <span>Systems Neuroscience</span>
-                        <span class="faq-logo-ampersand">&</span>
+                        <span class="faq-logo-ampersand">&amp;</span>
                         <span>Neurotechnology Unit</span>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="Lab Logo" class="footer-logo">
+                    <img src="../images/logo.png" alt="Lab Logo" class="footer-logo">
                     <h3>SNN-Unit</h3>
-                    <p>Systems Neuroscience & Neurotechnology Unit</p>
+                    <p>Systems Neuroscience &amp; Neurotechnology Unit</p>
                 </div>
                 <div class="footer-links">
                     <h4>Categories</h4>
@@ -119,7 +119,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>window.faqImageBase = '../images/';</script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

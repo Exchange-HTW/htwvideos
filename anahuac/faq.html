@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ - Systems Neuroscience &amp; Neurotechnology Unit (SNNU) — Anáhuac.">
+    <title>FAQ | SNN-Unit | Saarland University — Anáhuac</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- CSS Específico Anáhuac -->
+    <link rel="stylesheet" href="anahuac.css">
+
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body class="anahuac-theme">
+    <div id="particles-container"></div>
+
+    <!-- ROULETTE MENU -->
+    <header class="roulette-header" id="navbar">
+        <div class="roulette-container">
+            <!-- Pista Blanca de la Ruleta (CSS puro para geometría perfecta) -->
+            <div class="roulette-track"></div>
+
+            <!-- Botones -->
+            <a href="index.html#videos-section" class="roulette-btn pos-left">VIDEO</a>
+
+            <a href="index.html" class="roulette-btn pos-center logo-btn">
+                <img src="../images/anahuac.png" alt="Anáhuac Logo">
+            </a>
+
+            <a href="#" class="roulette-btn pos-right">FAQ</a>
+
+            <!-- Texto inferior HTW Saar -->
+            <div class="htw-saar-txt">
+                <h2>htw saar</h2>
+                <div class="htw-saar-desc">
+                    Hochschule für<br>
+                    Technik und Wirtschaft<br>
+                    des Saarlandes<br>
+                    <span style="color:#888;">University of<br>Applied Sciences</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="padding-top: 250px;"></div>
+
+    <!-- FAQ DISCLAIMER SECTION -->
+    <section id="faq-disclaimer" class="faq-disclaimer-section">
+        <div class="faq-top-half">
+            <div class="container faq-header-container">
+                <div class="faq-title">
+                    <h1 class="faq-main-heading">FAQ</h1>
+                    <span class="faq-subtitle">Internship</span>
+                </div>
+                <div class="faq-logos">
+                    <div class="faq-logo-img-wrapper">
+                        <img src="../images/logo.png" alt="University Logo" class="faq-logo-img">
+                    </div>
+                    <div class="faq-logo-main">
+                        <span>Systems Neuroscience</span>
+                        <span class="faq-logo-ampersand">&amp;</span>
+                        <span>Neurotechnology Unit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-bottom-half">
+            <div class="container container-card">
+                <!-- Wrapper for Canva FAQ Images -->
+                <div class="faq-gallery-grid" id="faq-gallery-grid">
+                    <!-- Las portadas serán inyectadas por script.js dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM ANAHUAC FOOTER -->
+    <footer class="anahuac-footer">
+        <div class="af-col af-col-left">
+            <p>SNN-Unit</p>
+            <small>Systems Neuroscience &amp; Neurotechnology Unit</small>
+        </div>
+
+        <div class="af-col af-col-center">
+            <h2>htw saar</h2>
+            <div class="footer-logo-circle">
+                <img src="../images/anahuac.png" alt="Anáhuac Logo" class="footer-anahuac-logo">
+            </div>
+        </div>
+
+        <div class="af-col af-col-right">
+            <strong>Contact</strong>
+            <p>Saarbrücken, Germany</p>
+            <p>Email: exchange@snn-unit.de</p>
+            <div class="af-socials">
+                <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer">IG</a>
+                <a href="https://www.youtube.com/@SNNUComm" target="_blank" rel="noopener noreferrer">YT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Tells script.js to load FAQ images from the shared images folder -->
+    <script>window.faqImageBase = '../images/';</script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

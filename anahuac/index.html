@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Systems Neuroscience &amp; Neurotechnology Unit (SNNU) – Oportunidades de residencia para estudiantes de la Universidad Anáhuac.">
+    <title>SNN-Unit | Saarland University — Anáhuac</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS (en caso de usar carruseles) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Estilos Compartidos -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- CSS Específico Anáhuac -->
+    <link rel="stylesheet" href="anahuac.css">
+
+    <link rel="icon" href="../images/logo.png" type="image/png">
+</head>
+
+<body class="anahuac-theme">
+    <div id="particles-container"></div>
+
+    <!-- ROULETTE MENU -->
+    <header class="roulette-header" id="navbar">
+        <div class="roulette-container">
+            <!-- Pista Blanca de la Ruleta (CSS puro para geometría perfecta) -->
+            <div class="roulette-track"></div>
+
+            <!-- Botones -->
+            <a href="#videos-section" class="roulette-btn pos-left"
+                onclick="smoothScroll(event, '#videos-section')">VIDEO</a>
+
+            <a href="#" class="roulette-btn pos-center logo-btn">
+                <img src="../images/anahuac.png" alt="Anáhuac Logo">
+            </a>
+
+            <a href="faq.html" class="roulette-btn pos-right">FAQ</a>
+
+            <!-- Texto inferior HTW Saar -->
+            <div class="htw-saar-txt">
+                <h2>htw saar</h2>
+                <div class="htw-saar-desc">
+                    Hochschule für<br>
+                    Technik und Wirtschaft<br>
+                    des Saarlandes<br>
+                    <span style="color:#888;">University of<br>Applied Sciences</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="anahuac-container" style="padding-top: 280px;">
+
+        <!-- HERO / TEXT SECTION -->
+        <section class="anahuac-text-section">
+            <h1 class="anahuac-subtitle">Bienvenido a tu</h1>
+            <h1 class="anahuac-title">futuro en ingeniería</h1>
+
+            <div class="anahuac-text-column glass-card">
+                <p>
+                    <strong>Si te encuentras estudiando tus últimos semestres en
+                        Ingeniería Biomédica, Eléctrica o Electrónica</strong> o te interesa hacer una
+                    <strong><span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Maestría en
+                            ingeniería en neurociencias<span class="custom-tooltip"
+                                style="cursor: pointer; text-transform: none; font-weight: normal;"
+                                onclick="event.stopPropagation(); window.open('https://www.htwsaar.de/en/studieren/studiengaenge/ingenieurwissenschaften/master/neural-engineering-msc-1', '_blank');">https://htwsaar.de/master...</span></span></strong>,
+                    te invitamos a realizar tus prácticas profesionales con nosotros en el
+                    <strong><span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">SNNU (Systems
+                            Neuroscience &amp; Neurotechnology Unit)<span class="custom-tooltip"
+                                style="cursor: pointer; text-transform: none; font-weight: normal;"
+                                onclick="event.stopPropagation(); window.open('https://snn-unit.de', '_blank');">https://snn-unit.de</span></span></strong>,
+                    ubicado en htw saar, universidad socia de la Anáhuac.
+                </p>
+
+                <p>
+                    Nuestros laboratorios se encuentran en
+                    <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Saarbrücken<span
+                            class="custom-tooltip image-tooltip"><span class="saarbrucken-slideshow"><img
+                                    src="../images/Rathaus.png" alt="Saarbrücken"><img src="../images/RathausNacht.png"
+                                    alt="Saarbrücken Night" class="saarbrucken-night"></span></span></span><strong>,
+                        <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Alemania<span
+                                class="custom-tooltip image-tooltip"><span class="slideshow-6"><img
+                                        src="../images/1-Frank.png" alt="Alemania"><img src="../images/2-Col.png"
+                                        alt="Alemania"><img src="../images/3-Hamburg.png" alt="Alemania">
+                                    <img src="../images/4-Bavaria.png" alt="Alemania">
+                                    <img src="../images/5-Bavaria.png" alt="Alemania">
+                                    <img src="../images/6-Bavaria.png" alt="Alemania"></span></span></span></strong>,
+                    y realizamos investigación multidisciplinaria en neurociencia de sistemas a múltiples escalas,
+                    neuromodelado cuantitativo y neuroimagen.
+                </p>
+
+                <p>
+                    Durante tu estancia, podrás trabajar bajo la supervisión de alguno de nuestros colaboradores en una
+                    de nuestras líneas de investigación. Para más detalles, puedes visitar nuestra página web.<br>
+                    Nuestros colaboradores hablan alemán, inglés y, en algunos casos, español.
+                </p>
+
+                <p>
+                    Para más información, contáctanos en el correo
+                    <a href="mailto:exchange@snn-unit.de">exchange@snn-unit.de</a>.
+                    Si deseas conocer más sobre el proceso interno dentro de la Anáhuac, puedes contactar a la Ing.
+                    -----------------------------.
+                </p>
+            </div>
+        </section>
+
+        <!-- VIDEOS SECTION -->
+        <section id="videos-section" style="margin-top: 80px; scroll-margin-top: 100px;">
+            <h2 class="anahuac-title" style="margin-bottom: 0;">Video</h2>
+
+            <div class="staggered-grid">
+
+                <!-- Video 1 (Izquierda) -->
+                <div class="staggered-video st-left">
+                    <div class="anahuac-video-card">
+                        <!-- Placeholder Video Enlace de ITM como demo, cambiar después -->
+                        <iframe src="https://www.youtube-nocookie.com/embed/CN3wbaJNdU0?rel=0&enablejsapi=1"
+                            title="Testimonio 1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="anahuac-video-info">
+                            <h3>José Trapero – Neural Engineering</h3>
+                            <p>Egresado de la Universidad Anáhuac Mayab. Cursa la maestría en Neural Engineering y
+                                colabora en proyectos de neuroergonomía aplicada. Destaca el acceso a herramientas y
+                                tecnología de primer nivel en Alemania, lo que le permite realizar investigaciones
+                                únicas en su campo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 (Derecha) -->
+                <div class="staggered-video st-right">
+                    <div class="anahuac-video-card">
+                        <iframe src="https://www.youtube-nocookie.com/embed/sAiXZS1GNrI?rel=0&enablejsapi=1"
+                            title="Testimonio 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="anahuac-video-info">
+                            <h3>Roger Vargas - Investigador Asociado SNN Unit</h3>
+                            <p>Inició como residente en la HTW Saar y continuó con
+                                la maestría en Neural Engineering. Actualmente trabaja como investigador asociado en la
+                                SNN-Unit, combinando técnicas de programación y medición de biopotenciales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 (Izquierda) -->
+                <div class="staggered-video st-left">
+                    <div class="anahuac-video-card">
+                        <iframe src="https://www.youtube-nocookie.com/embed/n89GmJmPoMI?rel=0&enablejsapi=1"
+                            title="Testimonio 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="anahuac-video-info">
+                            <h3>Gerardo Romero – Audio Inmersivo / Ambisonics</h3>
+                            <p>Su tesis de maestría
+                                se enfoca en audio inmersivo con el formato Ambisonics, vinculado a entornos de realidad
+                                virtual.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT / APPLY SECTION -->
+        <section id="contact-section" class="contact-section"
+            style="padding: 100px 0; background-color: transparent; position: relative; scroll-margin-top: 100px;">
+            <!-- Simple background glow orange -->
+            <div
+                style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 300px; background: radial-gradient(circle, rgba(255,89,0,0.08) 0%, rgba(0,0,0,0) 70%); pointer-events: none;">
+            </div>
+
+            <div class="anahuac-container" style="max-width: 800px; padding: 0;">
+                <div class="section-header text-center fade-in-up" style="margin-bottom: 3rem;">
+                    <h2 class="anahuac-title" style="text-align: center; margin-bottom: 10px;">Join the <span
+                            class="text-gradient">SNN-Unit</span></h2>
+                    <p style="color: #bbb; text-align: center;">Generate a standardized application email to contact our
+                        Principal Investigators.</p>
+                </div>
+
+                <div class="contact-wrapper fade-in-up">
+                    <!-- Email Generator Form -->
+                    <div class="glass-card contact-form-card"
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,89,0,0.2);">
+                        <form id="emailGeneratorForm" onsubmit="generateEmail(event)">
+                            <div class="contact-form-grid"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                <!-- Name -->
+                                <div class="form-group">
+                                    <label for="studentName"
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Full
+                                        Name</label>
+                                    <input type="text" id="studentName" required placeholder="Tu Nombre Completo"
+                                        style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit;">
+                                </div>
+
+                                <!-- Position of Interest -->
+                                <div class="form-group">
+                                    <label for="position"
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Position
+                                        of Interest</label>
+                                    <select id="position" required
+                                        style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; appearance: none;">
+                                        <option value="" disabled selected>Select a position...</option>
+                                        <option value="Exchange Student">Exchange Student (Residencia)</option>
+                                        <option value="Ph.D. Student">Ph.D. Student</option>
+                                        <option value="Postdoctoral Researcher">Postdoctoral Researcher</option>
+                                        <option value="Master Thesis Student">Master Thesis Student</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Lab of Interest -->
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="lab"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Lab
+                                    / Research Area of Interest</label>
+                                <select id="lab" required
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; appearance: none;">
+                                    <option value="" disabled selected>Select a lab...</option>
+                                    <option value="Exchange Student">Exchange Students</option>
+                                    <option value="Mindscan Lab (Dr. F. I. Corona-Strauss)">Mindscan Lab (Dr. F. I.
+                                        Corona-Strauss)</option>
+                                </select>
+                            </div>
+
+                            <!-- Introduction -->
+                            <div class="form-group" style="margin-bottom: 2rem;">
+                                <label for="intro"
+                                    style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">
+                                    <span>Brief Introduction &amp; Motivation</span>
+                                    <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 short paragraphs)</span>
+                                </label>
+                                <textarea id="intro" required rows="6"
+                                    placeholder="I am an engineering student from Universidad Anáhuac writing to express my interest in joining the SNN-Unit..."
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; resize: vertical;"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary"
+                                style="width: 100%; justify-content: center; padding: 1rem; border: none;">Generate
+                                Email Draft</button>
+                        </form>
+                    </div>
+
+                    <!-- Result Area (Hidden initially) -->
+                    <div id="emailResult" class="glass-card contact-form-card"
+                        style="display: none; border-top: 4px solid var(--anahuac-orange); background: rgba(255,255,255,0.03); margin-top: 20px;">
+                        <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem; color: #fff;">Preview &amp;
+                            Send</h3>
+
+                        <div
+                            style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.9rem;">
+                            <div style="margin-bottom: 0.5rem;"><span style="color: #bbb;">To:</span> <span id="outTo"
+                                    style="color: #fff;"></span></div>
+                            <div style="margin-bottom: 1rem;"><span style="color: #bbb;">Subject:</span> <span
+                                    id="outSubject" style="color: var(--anahuac-orange); font-weight: bold;"></span>
+                            </div>
+                            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                                <span style="color: #bbb; display: block; margin-bottom: 0.5rem;">Body:</span>
+                                <div id="outBody" style="color: #eee; white-space: pre-wrap; line-height: 1.6;"></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-result-actions" style="display: flex; gap: 10px;">
+                            <button onclick="copyEmailData()" class="btn-primary-outline" style="flex:1;">Copy
+                                Text</button>
+                            <a id="mailToLink" href="#" class="btn-primary"
+                                style="flex:1; text-align: center; display: flex; align-items: center; justify-content: center;">Open
+                                in Mail App</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CUSTOM ANAHUAC FOOTER -->
+    <footer class="anahuac-footer">
+        <div class="af-col af-col-left">
+            <p>SNN-Unit</p>
+            <small>Systems Neuroscience &amp; Neurotechnology Unit</small>
+        </div>
+
+        <div class="af-col af-col-center">
+            <h2>htw saar</h2>
+            <div class="footer-logo-circle">
+                <img src="../images/anahuac.png" alt="Anáhuac Logo" class="footer-anahuac-logo">
+            </div>
+        </div>
+
+        <div class="af-col af-col-right">
+            <strong>Contact</strong>
+            <p>Saarbrücken, Germany</p>
+            <p>Email: exchange@snn-unit.de</p>
+            <div class="af-socials">
+                <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer">IG</a>
+                <a href="https://www.youtube.com/@SNNUComm" target="_blank" rel="noopener noreferrer">YT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (Reutilizando logica de tooltips) -->
+    <script src="../script.js"></script>
+    <script>
+        // Smooth scroll específico para la ruleta
+        function smoothScroll(event, target) {
+            event.preventDefault();
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+    <!-- TUTORIAL ANIMATION SCRIPT -->
+    <script>
+        (function () {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100vw';
+            canvas.style.height = '100vh';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '999999';
+            canvas.style.transition = 'opacity 1s ease';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const targets = Array.from(document.querySelectorAll('.custom-tooltip-trigger')).filter(el => {
+                const rect = el.getBoundingClientRect();
+                return rect.width > 0 && rect.height > 0;
+            });
+
+            if (targets.length === 0) {
+                canvas.remove();
+                return;
+            }
+
+            function drawDottedHand(x, y, clickYOffset) {
+                ctx.save();
+                ctx.translate(x, y + clickYOffset);
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowBlur = 6;
+
+                const dots = [
+                    [0, 0], [0, 5], [0, 10],
+                    [6, 12], [12, 14], [18, 16],
+                    [-7, 16], [-5, 21],
+                    [0, 18], [6, 20], [12, 22],
+                    [-2, 25], [4, 27], [10, 29]
+                ];
+
+                dots.forEach(([dx, dy]) => {
+                    ctx.beginPath();
+                    ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                ctx.restore();
+            }
+
+            let currentIndex = 0;
+            let cursorX = w / 2;
+            let cursorY = h + 50;
+            let state = 'moving';
+            let timer = 0;
+            let lastTime = performance.now();
+            let clickOffset = 0;
+
+            function animate(time) {
+                const dt = time - lastTime;
+                lastTime = time;
+
+                ctx.clearRect(0, 0, w, h);
+
+                if (currentIndex >= targets.length) {
+                    canvas.style.opacity = '0';
+                    setTimeout(() => canvas.remove(), 1000);
+                    return;
+                }
+
+                const targetEl = targets[currentIndex];
+                const rect = targetEl.getBoundingClientRect();
+                const targetX = rect.left + rect.width / 2;
+                const targetY = rect.bottom + 5;
+
+                if (state === 'moving') {
+                    cursorX += (targetX - cursorX) * 0.05;
+                    cursorY += (targetY - cursorY) * 0.05;
+
+                    const dist = Math.hypot(targetX - cursorX, targetY - cursorY);
+                    if (dist < 4) {
+                        state = 'clicking';
+                        timer = 0;
+                    }
+                } else if (state === 'clicking') {
+                    timer += dt;
+                    if (timer < 150) {
+                        clickOffset = (timer / 150) * 8;
+                    } else if (timer < 300) {
+                        if (!targetEl.dataset.animHl) {
+                            targetEl.dataset.animHl = "true";
+                            const originalColor = targetEl.style.color;
+                            const originalShadow = targetEl.style.textShadow;
+                            const originalTrans = targetEl.style.transition;
+                            targetEl.style.transition = 'all 0.3s ease';
+                            // Anáhuac theme uses orange
+                            targetEl.style.color = '#ff5900';
+                            targetEl.style.textShadow = '0 0 10px rgba(255, 89, 0, 0.8)';
+                            setTimeout(() => {
+                                targetEl.style.color = originalColor;
+                                targetEl.style.textShadow = originalShadow;
+                                setTimeout(() => { targetEl.style.transition = originalTrans; }, 300);
+                            }, 500);
+                        }
+                        clickOffset = 8 - ((timer - 150) / 150) * 8;
+                    } else if (timer > 800) {
+                        state = 'moving';
+                        clickOffset = 0;
+                        currentIndex++;
+                    }
+                }
+
+                drawDottedHand(cursorX, cursorY, clickOffset);
+                requestAnimationFrame(animate);
+            }
+
+            setTimeout(() => {
+                lastTime = performance.now();
+                requestAnimationFrame(animate);
+            }, 1000);
+
+        })();
+    </script>
+</body>
+
+</html>

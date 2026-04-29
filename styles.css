@@ -748,6 +748,7 @@ select option {
     background: #000;
     padding: 80px 0 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-right: 60px; /* Prevent overlap with theme toggle button */
 }
 
 .footer-grid {
@@ -1052,6 +1053,10 @@ select option {
 
     .footer-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding-right: 0;
     }
 
     .particle:nth-child(n+20) {
@@ -1705,4 +1710,361 @@ select option {
     .faq-lightbox-nav.prev { left: 5px; }
     .faq-lightbox-nav.next { right: 5px; }
     .faq-lightbox-close { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; }
+}
+
+/* ========================================================================= */
+/* FLOATING THEME TOGGLE BUTTON */
+/* ========================================================================= */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(var(--primary-rgb), 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(12deg);
+    background: rgba(var(--primary-rgb), 0.25);
+    box-shadow: 0 12px 40px rgba(var(--primary-rgb), 0.3);
+    border-color: rgba(var(--primary-rgb), 0.5);
+}
+
+body.light-theme .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #0a0a0a;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================================================= */
+/* LIGHT / WHITE MODE OVERRIDES  (class="light-theme" on <body>)             */
+/* ========================================================================= */
+body.light-theme {
+    --bg-primary:    #ffffff;
+    --bg-secondary:  #f5f5f7;
+    --bg-tertiary:   #eaeaed;
+    --text-primary:  #0a0a0a;
+    --text-secondary:#1c1c1e;
+    --text-tertiary: #3c3c43;
+    --text-quaternary:#6b6b72;
+
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+/* ── Headings & links ─────────────────────────────────────────────────────── */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+    color: var(--text-primary);
+}
+
+body.light-theme a {
+    color: var(--primary-600);
+}
+
+/* ── Navbar ───────────────────────────────────────────────────────────────── */
+body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(var(--primary-rgb), 0.15);
+}
+
+body.light-theme .nav-link {
+    color: #1c1c1e;
+}
+
+body.light-theme .nav-link:hover {
+    color: var(--primary-600);
+}
+
+body.light-theme .logo-text {
+    color: #0a0a0a;
+}
+
+body.light-theme .mobile-menu-toggle span {
+    background-color: #0a0a0a;
+}
+
+/* ── Glass cards ──────────────────────────────────────────────────────────── */
+body.light-theme .glass-card {
+    background: linear-gradient(135deg,
+        rgba(var(--primary-rgb), 0.05) 0%,
+        rgba(var(--primary-rgb), 0.02) 50%,
+        rgba(var(--primary-rgb), 0.05) 100%);
+    border: 1px solid rgba(var(--primary-rgb), 0.12);
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.06),
+        0 2px 4px -2px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .glass-card:hover {
+    border-color: rgba(var(--primary-rgb), 0.3);
+    box-shadow: 0 20px 40px -8px rgba(var(--primary-rgb), 0.15);
+}
+
+/* ── Intro text wrapper (ITM index) ───────────────────────────────────────── */
+body.light-theme .intro-text-wrapper {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+    color: #1c1c1e !important;
+}
+
+body.light-theme .intro-text-wrapper p {
+    color: #1c1c1e !important;
+}
+
+/* ── Video cards ──────────────────────────────────────────────────────────── */
+body.light-theme .video-container {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(var(--primary-rgb), 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .video-info h3 {
+    color: #0a0a0a;
+}
+
+body.light-theme .video-info p {
+    color: #3c3c43;
+}
+
+/* ── Custom tooltips ──────────────────────────────────────────────────────── */
+body.light-theme .custom-tooltip-trigger {
+    color: #0a0a0a;
+}
+
+body.light-theme .custom-tooltip-trigger:hover,
+body.light-theme .custom-tooltip-trigger:focus {
+    color: var(--primary-600);
+}
+
+body.light-theme .custom-tooltip {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #0a0a0a;
+}
+
+body.light-theme .custom-tooltip::after {
+    border-color: rgba(255, 255, 255, 0.98) transparent transparent transparent;
+}
+
+/* ── Contact form inputs ──────────────────────────────────────────────────── */
+body.light-theme input[type="text"],
+body.light-theme select,
+body.light-theme textarea {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: #0a0a0a !important;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+    color: #9a9aaa;
+}
+
+body.light-theme select option {
+    background-color: #ffffff;
+    color: #0a0a0a;
+}
+
+body.light-theme label {
+    color: #1c1c1e !important;
+}
+
+/* Email result preview area */
+body.light-theme #emailResult > div {
+    background: rgba(0,0,0,0.04) !important;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light-theme #outTo,
+body.light-theme #outBody {
+    color: #0a0a0a !important;
+}
+
+body.light-theme #outSubject {
+    color: var(--primary-600) !important;
+}
+
+body.light-theme .contact-result-actions .btn-primary-outline {
+    background: rgba(0,0,0,0.03);
+    color: var(--primary-600);
+    border-color: rgba(var(--primary-rgb), 0.4);
+}
+
+/* ── Partners section ─────────────────────────────────────────────────────── */
+body.light-theme .partners-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .partner-name {
+    color: #0a0a0a;
+}
+
+body.light-theme .partner-role {
+    color: #6b6b72;
+}
+
+/* ── About section ────────────────────────────────────────────────────────── */
+body.light-theme .about-section {
+    background: var(--bg-secondary);
+}
+
+body.light-theme .about-content p {
+    color: #3c3c43;
+}
+
+/* ── FAQ sections ─────────────────────────────────────────────────────────── */
+body.light-theme .faq-main-heading {
+    color: var(--primary-600);
+}
+
+body.light-theme .faq-subtitle {
+    color: #1c1c1e;
+}
+
+body.light-theme .faq-logo-main {
+    color: #0a0a0a;
+}
+
+body.light-theme .faq-logo-ampersand {
+    color: #6b6b72;
+}
+
+body.light-theme .faq-group-thumbnail {
+    background: #f0f0f5;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .faq-group-thumbnail::before {
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .faq-static-cover {
+    background: #e0e0e8;
+}
+
+body.light-theme .dynamic-swiper {
+    background: rgba(240, 240, 245, 0.98);
+}
+
+body.light-theme .faq-lightbox {
+    background: rgba(255, 255, 255, 0.97);
+}
+
+body.light-theme .faq-lightbox-close {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #0a0a0a;
+}
+
+body.light-theme .faq-lightbox-close:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+body.light-theme .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .footer-brand h3,
+body.light-theme .footer-links h4 {
+    color: #0a0a0a;
+}
+
+body.light-theme .footer-brand p,
+body.light-theme .footer-links a,
+body.light-theme .footer-links p {
+    color: #3c3c43;
+}
+
+body.light-theme .footer-links a:hover {
+    color: var(--primary-600);
+}
+
+body.light-theme .footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    color: #6b6b72;
+}
+
+body.light-theme .social-links a {
+    background: rgba(var(--primary-rgb), 0.08);
+    color: var(--primary-600);
+    border-color: rgba(var(--primary-rgb), 0.15);
+}
+
+body.light-theme .social-links a:hover {
+    background: var(--primary-500);
+    color: #fff;
+}
+
+/* ── Particles (subtle in light mode) ────────────────────────────────────── */
+body.light-theme .particle {
+    background: rgba(var(--primary-rgb), 0.25);
+    box-shadow: 0 0 6px rgba(var(--primary-rgb), 0.2);
+    opacity: 0.4;
+}
+
+/* ── Section backgrounds ──────────────────────────────────────────────────── */
+body.light-theme .contact-section {
+    background-color: var(--bg-secondary) !important;
+}
+
+body.light-theme .service-card-front,
+body.light-theme .service-card-back {
+    background-color: var(--bg-tertiary);
+}
+
+/* ── Hero section gradient ────────────────────────────────────────────────── */
+body.light-theme .hero-section::before {
+    background: radial-gradient(ellipse at top, rgba(var(--primary-rgb), 0.08) 0%, transparent 60%);
+}
+
+/* ── Dropdown menu ────────────────────────────────────────────────────────── */
+body.light-theme .dropdown-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .dropdown-item {
+    color: #1c1c1e;
+}
+
+body.light-theme .dropdown-item:hover {
+    color: var(--primary-600);
+    background: rgba(var(--primary-rgb), 0.06);
 }

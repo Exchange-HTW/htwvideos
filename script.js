@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0 });
-        
+
         videoIframes.forEach(iframe => videoObserver.observe(iframe));
     }
 
@@ -259,7 +259,7 @@ function copyEmailData() {
 // --- CLICK TOOLTIPS LOGIC ---
 function toggleTooltip(element, event) {
     event.stopPropagation();
-    
+
     // Close other tooltips first
     document.querySelectorAll('.custom-tooltip-trigger').forEach(el => {
         if (el !== element) {
@@ -280,18 +280,18 @@ document.addEventListener('click', () => {
 
 function copyTooltipText(element, event) {
     event.stopPropagation(); // prevent tooltip from closing immediately
-    
+
     const textToCopy = element.getAttribute('data-text');
     navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = element.innerHTML;
         element.innerHTML = "¡Copiado!";
         element.style.color = "#4ade80"; // Light green for success
-        
+
         setTimeout(() => {
             element.innerHTML = originalText;
             element.style.color = "";
             const parent = element.closest('.custom-tooltip-trigger');
-                if(parent) parent.classList.remove('active'); // Close bubble
+            if (parent) parent.classList.remove('active'); // Close bubble
         }, 800);
     }).catch(err => {
         console.error('Failed to copy: ', err);
@@ -304,6 +304,9 @@ function copyTooltipText(element, event) {
 document.addEventListener('DOMContentLoaded', () => {
     const faqGrid = document.getElementById('faq-gallery-grid');
     if (!faqGrid) return; // Only run on FAQ page
+
+    // Allow subdirectories (e.g. anahuac/) to override the image base path
+    const imgBase = (typeof window.faqImageBase !== 'undefined') ? window.faqImageBase : 'images/';
 
     const faqGroups = [
         { id: 1, start: 1, end: 5 },
@@ -320,15 +323,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const groupEl = document.createElement('div');
         groupEl.className = 'faq-group-thumbnail';
         groupEl.setAttribute('data-group', group.id);
-        
+
         let slidesHtml = '';
         for (let i = group.start; i <= group.end; i++) {
-            slidesHtml += `<div class="swiper-slide"><img src="images/${i}.png" alt="FAQ diapositiva ${i}"></div>`;
+            slidesHtml += `<div class="swiper-slide"><img src="${imgBase}${i}.png" alt="FAQ diapositiva ${i}"></div>`;
         }
 
         groupEl.innerHTML = `
             <div class="faq-static-cover">
-                <img src="images/${group.start}.png" alt="FAQ Grupo ${group.id}">
+                <img src="${imgBase}${group.start}.png" alt="FAQ Grupo ${group.id}">
                 <div class="faq-group-overlay">
                     <span>Ver ${numSlides} diapositivas</span>
                 </div>
@@ -348,9 +351,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mouse Enter (Activa el Coverflow y lo hace visible)
         groupEl.addEventListener('mouseenter', () => {
             groupEl.classList.add('is-active');
-            
+
             // Inicializar swiper si no existe, solo cuando es necesario
-            if(!swiper) {
+            if (!swiper) {
                 swiper = new Swiper(swiperContainer, {
                     effect: 'coverflow',
                     grabCursor: true,
@@ -393,12 +396,12 @@ document.addEventListener('DOMContentLoaded', () => {
             let x = e.clientX - rect.left;
             if (x < 0) x = 0;
             if (x > rect.width) x = rect.width;
-            
+
             const percentage = x / rect.width; // 0.0 to 1.0
 
             let targetSlide = Math.floor(percentage * numSlides);
             if (targetSlide >= numSlides) targetSlide = numSlides - 1;
-            
+
             swiper.slideTo(targetSlide);
         });
     });
@@ -426,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function openLightbox(group, index) {
         currentLightboxGroup = group;
         currentLightboxIndex = index;
-        lightboxImg.src = `images/${group.start + index}.png`;
+        lightboxImg.src = `${imgBase}${group.start + index}.png`;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
         updateLightboxNav();
@@ -442,14 +445,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function lightboxNavigate(direction) {
         if (!currentLightboxGroup) return;
         const totalSlides = currentLightboxGroup.end - currentLightboxGroup.start + 1;
-        
+
         currentLightboxIndex += direction;
-        
+
         // Limits
         if (currentLightboxIndex < 0) currentLightboxIndex = 0;
         if (currentLightboxIndex >= totalSlides) currentLightboxIndex = totalSlides - 1;
-        
-        lightboxImg.src = `images/${currentLightboxGroup.start + currentLightboxIndex}.png`;
+
+        lightboxImg.src = `${imgBase}${currentLightboxGroup.start + currentLightboxIndex}.png`;
         updateLightboxNav();
     }
 
@@ -460,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     lightboxCloseBtn.addEventListener('click', closeLightbox);
-    
+
     lightboxPrevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         lightboxNavigate(-1);
@@ -481,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Soporte para teclado (Flechas direccionales y ESC)
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
-        
+
         if (e.key === 'ArrowLeft') {
             lightboxNavigate(-1);
         } else if (e.key === 'ArrowRight') {
@@ -492,3 +495,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+/* ========================================================================= */
+/* THEME TOGGLE LOGIC */
+/* ========================================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.createElement('button');
+    themeBtn.id = 'theme-toggle-btn';
+    themeBtn.className = 'theme-toggle-btn';
+    themeBtn.innerHTML = '☀️';
+    themeBtn.setAttribute('aria-label', 'Toggle light/dark theme');
+    document.body.appendChild(themeBtn);
+
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeBtn.innerHTML = '🌙';
+    } else {
+        document.body.classList.remove('light-theme');
+        themeBtn.innerHTML = '☀️';
+    }
+
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        themeBtn.innerHTML = isLight ? '🌙' : '☀️';
+    });
+});
+
