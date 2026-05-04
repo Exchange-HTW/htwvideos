@@ -97,8 +97,15 @@ body.anahuac-theme .particle {
         margin-bottom: -59.5px;
     }
     .htw-saar-txt {
+        top: 215px; /* Mover abajo para separar de la ruleta */
+        flex-direction: column; /* Apilar texto para mejor uso del ancho */
+        gap: 5px;
         width: 100%;
-        gap: 10px;
+    }
+    .htw-saar-desc {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
     }
 }
 
