@@ -111,19 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(0,0,0,0.95)';
-                navLinks.style.padding = '20px 0';
-                navLinks.style.backdropFilter = 'blur(10px)';
-            }
+            navLinks.classList.toggle('active');
         });
     }
 

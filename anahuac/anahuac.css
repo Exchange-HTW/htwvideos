@@ -92,9 +92,24 @@ body.anahuac-theme .particle {
 /* Native responsiveness downscaling */
 @media (max-width: 600px) {
     .roulette-container {
-        transform: scale(0.7);
+        transform: scale(0.65);
         transform-origin: top center;
-        margin-bottom: -51px;
+        margin-bottom: -59.5px;
+    }
+    .htw-saar-txt {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .roulette-container {
+        transform: scale(0.55);
+        transform-origin: top center;
+        margin-bottom: -76.5px;
+    }
+    .htw-saar-txt h2 {
+        font-size: 1.8rem;
     }
 }
 

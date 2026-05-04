@@ -1033,6 +1033,18 @@ select option {
         display: none;
     }
 
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        padding: 20px 0;
+        backdrop-filter: blur(10px);
+    }
+
     /* En una app real abriría un modal */
     .mobile-menu-toggle {
         display: flex;
@@ -1812,6 +1824,10 @@ body.light-theme .logo-text {
 
 body.light-theme .mobile-menu-toggle span {
     background-color: #0a0a0a;
+}
+
+body.light-theme .nav-links.active {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* ── Glass cards ──────────────────────────────────────────────────────────── */
