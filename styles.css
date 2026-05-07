@@ -748,7 +748,8 @@ select option {
     background: #000;
     padding: 80px 0 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-right: 60px; /* Prevent overlap with theme toggle button */
+    padding-right: 60px;
+    /* Prevent overlap with theme toggle button */
 }
 
 .footer-grid {
@@ -1040,7 +1041,7 @@ select option {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(0,0,0,0.95);
+        background: rgba(0, 0, 0, 0.95);
         padding: 20px 0;
         backdrop-filter: blur(10px);
     }
@@ -1163,7 +1164,7 @@ select option {
     flex: 1;
     display: flex;
     justify-content: center;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .contact-result-actions .btn-primary {
@@ -1176,9 +1177,11 @@ select option {
     .contact-form-card {
         padding: 1.5rem;
     }
+
     .contact-form-grid {
         grid-template-columns: 1fr;
     }
+
     .contact-result-actions {
         flex-direction: column;
     }
@@ -1197,6 +1200,11 @@ select option {
     display: flex;
     align-items: baseline;
     gap: 24px;
+}
+
+.faq-title-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .faq-main-heading {
@@ -1262,7 +1270,7 @@ select option {
         text-align: center;
         padding-top: 20px;
     }
-    
+
     .faq-title {
         flex-direction: column;
         align-items: center;
@@ -1285,7 +1293,7 @@ select option {
         height: 180px;
         position: static;
     }
-    
+
     .faq-logo-main {
         font-size: 24px;
     }
@@ -1295,7 +1303,8 @@ select option {
 /* CUSTOM CLICK TOOLTIPS */
 /* ========================================================================= */
 .custom-tooltip-trigger {
-    font-weight: 800; /* Blanco grueso */
+    font-weight: 800;
+    /* Blanco grueso */
     color: #ffffff;
     cursor: pointer;
     position: relative;
@@ -1321,7 +1330,7 @@ select option {
     backdrop-filter: blur(10px);
     padding: 10px 16px;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     z-index: 100;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     pointer-events: none;
@@ -1373,9 +1382,21 @@ select option {
 }
 
 @keyframes dayNightFade {
-    0%, 15% { opacity: 0; }
-    35%, 65% { opacity: 1; }
-    85%, 100% { opacity: 0; }
+
+    0%,
+    15% {
+        opacity: 0;
+    }
+
+    35%,
+    65% {
+        opacity: 1;
+    }
+
+    85%,
+    100% {
+        opacity: 0;
+    }
 }
 
 .saarbrucken-night {
@@ -1397,16 +1418,34 @@ select option {
     height: auto;
     border-radius: 8px;
     opacity: 0;
-    animation: fade6 18s ease-in-out infinite; /* 3 seconds per image */
+    animation: fade6 18s ease-in-out infinite;
+    /* 3 seconds per image */
 }
 
 /* Delay each image sequentially by 3 seconds */
-.slideshow-6 img:nth-child(1) { animation-delay: 0s; }
-.slideshow-6 img:nth-child(2) { animation-delay: 3s; }
-.slideshow-6 img:nth-child(3) { animation-delay: 6s; }
-.slideshow-6 img:nth-child(4) { animation-delay: 9s; }
-.slideshow-6 img:nth-child(5) { animation-delay: 12s; }
-.slideshow-6 img:nth-child(6) { animation-delay: 15s; }
+.slideshow-6 img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow-6 img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slideshow-6 img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.slideshow-6 img:nth-child(4) {
+    animation-delay: 9s;
+}
+
+.slideshow-6 img:nth-child(5) {
+    animation-delay: 12s;
+}
+
+.slideshow-6 img:nth-child(6) {
+    animation-delay: 15s;
+}
 
 /* 
   18s total. 
@@ -1415,11 +1454,25 @@ select option {
   2.8s - 3.9s (16% - 22%): Fade Out
 */
 @keyframes fade6 {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    16% { opacity: 1; }
-    22% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    16% {
+        opacity: 1;
+    }
+
+    22% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* =========================================
@@ -1438,20 +1491,24 @@ select option {
 .faq-group-thumbnail {
     position: relative;
     border-radius: 20px;
-    cursor: crosshair; /* Indicates interactability */
+    cursor: crosshair;
+    /* Indicates interactability */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, z-index 0s 0.4s;
     background: rgba(15, 15, 20, 0.95);
-    aspect-ratio: 4/3; /* Enforce consistent dimensions */
-    z-index: 1; 
+    aspect-ratio: 4/3;
+    /* Enforce consistent dimensions */
+    z-index: 1;
 }
 
 /* Base style without active scale to prevent overlapping issues from z-index */
 .faq-group-thumbnail.is-active {
     transform: scale(1.65);
-    z-index: 100 !important; /* Jump above others immediately */
+    z-index: 100 !important;
+    /* Jump above others immediately */
     box-shadow: 0 30px 80px rgba(0, 163, 255, 0.4);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; /* No z-index delay here */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    /* No z-index delay here */
 }
 
 /* Inner borders */
@@ -1486,7 +1543,8 @@ select option {
 }
 
 .faq-group-thumbnail:hover .faq-static-cover img {
-    transform: scale(1.05); /* Slight bounce before turning into coverflow */
+    transform: scale(1.05);
+    /* Slight bounce before turning into coverflow */
 }
 
 /* Hide static cover when active */
@@ -1501,11 +1559,12 @@ select option {
     left: 0;
     right: 0;
     padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    opacity: 1; /* Always visible for user context */
+    opacity: 1;
+    /* Always visible for user context */
     transition: opacity 0.3s ease;
     z-index: 6;
     pointer-events: none;
@@ -1535,7 +1594,8 @@ select option {
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Below cover initially */
+    z-index: 2;
+    /* Below cover initially */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -1545,19 +1605,23 @@ select option {
 }
 
 .faq-group-thumbnail.is-active .dynamic-swiper {
-    z-index: 8; /* Raise above static cover */
+    z-index: 8;
+    /* Raise above static cover */
     opacity: 1;
     visibility: visible;
 }
 
 /* Swiper classes adjustments */
 .dynamic-swiper .swiper-wrapper {
-    align-items: center; /* Center slides vertically */
+    align-items: center;
+    /* Center slides vertically */
 }
 
 .dynamic-swiper .swiper-slide {
-    width: 70%; /* Shows adjacent slides slightly */
-    height: 85%; /* Paddings top and bottom */
+    width: 70%;
+    /* Shows adjacent slides slightly */
+    height: 85%;
+    /* Paddings top and bottom */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1579,7 +1643,10 @@ select option {
 ========================================= */
 .faq-lightbox {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 100000;
     background: rgba(10, 10, 15, 0.95);
     backdrop-filter: blur(15px);
@@ -1601,7 +1668,7 @@ select option {
     max-width: 90vw;
     max-height: 90vh;
     border-radius: 15px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     object-fit: contain;
@@ -1641,7 +1708,8 @@ select option {
     transform: translateY(-50%);
     background: transparent;
     border: none;
-    color: transparent; /* Hide raw text */
+    color: transparent;
+    /* Hide raw text */
     font-size: 0;
     width: 80px;
     height: 80px;
@@ -1664,7 +1732,7 @@ select option {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 15px 4px rgba(0, 163, 255, 0.8),
-                0 0 30px 8px rgba(0, 163, 255, 0.4);
+        0 0 30px 8px rgba(0, 163, 255, 0.4);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     animation: stellar-pulse 2s infinite alternate;
 }
@@ -1685,7 +1753,7 @@ select option {
 .faq-lightbox-nav:hover::before {
     transform: scale(1.5);
     box-shadow: 0 0 20px 6px rgba(0, 163, 255, 1),
-                0 0 40px 15px rgba(255, 255, 255, 0.3);
+        0 0 40px 15px rgba(255, 255, 255, 0.3);
 }
 
 .faq-lightbox-nav:hover::after {
@@ -1705,13 +1773,25 @@ select option {
 }
 
 @keyframes stellar-pulse {
-    0% { transform: scale(0.9); opacity: 0.8; }
-    100% { transform: scale(1.2); opacity: 1; }
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
 
 @keyframes stellar-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1719,9 +1799,22 @@ select option {
         width: 60px;
         height: 60px;
     }
-    .faq-lightbox-nav.prev { left: 5px; }
-    .faq-lightbox-nav.next { right: 5px; }
-    .faq-lightbox-close { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 24px; }
+
+    .faq-lightbox-nav.prev {
+        left: 5px;
+    }
+
+    .faq-lightbox-nav.next {
+        right: 5px;
+    }
+
+    .faq-lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
 }
 
 /* ========================================================================= */
@@ -1771,13 +1864,13 @@ body.light-theme .theme-toggle-btn:hover {
 /* LIGHT / WHITE MODE OVERRIDES  (class="light-theme" on <body>)             */
 /* ========================================================================= */
 body.light-theme {
-    --bg-primary:    #ffffff;
-    --bg-secondary:  #f5f5f7;
-    --bg-tertiary:   #eaeaed;
-    --text-primary:  #0a0a0a;
-    --text-secondary:#1c1c1e;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --bg-tertiary: #eaeaed;
+    --text-primary: #0a0a0a;
+    --text-secondary: #1c1c1e;
     --text-tertiary: #3c3c43;
-    --text-quaternary:#6b6b72;
+    --text-quaternary: #6b6b72;
 
     background-color: var(--bg-primary);
     color: var(--text-secondary);
@@ -1833,9 +1926,9 @@ body.light-theme .nav-links.active {
 /* ── Glass cards ──────────────────────────────────────────────────────────── */
 body.light-theme .glass-card {
     background: linear-gradient(135deg,
-        rgba(var(--primary-rgb), 0.05) 0%,
-        rgba(var(--primary-rgb), 0.02) 50%,
-        rgba(var(--primary-rgb), 0.05) 100%);
+            rgba(var(--primary-rgb), 0.05) 0%,
+            rgba(var(--primary-rgb), 0.02) 50%,
+            rgba(var(--primary-rgb), 0.05) 100%);
     border: 1px solid rgba(var(--primary-rgb), 0.12);
     box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.06),
@@ -1919,9 +2012,9 @@ body.light-theme label {
 }
 
 /* Email result preview area */
-body.light-theme #emailResult > div {
-    background: rgba(0,0,0,0.04) !important;
-    border: 1px solid rgba(0,0,0,0.08);
+body.light-theme #emailResult>div {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 body.light-theme #outTo,
@@ -1934,7 +2027,7 @@ body.light-theme #outSubject {
 }
 
 body.light-theme .contact-result-actions .btn-primary-outline {
-    background: rgba(0,0,0,0.03);
+    background: rgba(0, 0, 0, 0.03);
     color: var(--primary-600);
     border-color: rgba(var(--primary-rgb), 0.4);
 }
