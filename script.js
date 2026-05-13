@@ -495,13 +495,26 @@ document.addEventListener('DOMContentLoaded', () => {
     themeBtn.setAttribute('aria-label', 'Toggle light/dark theme');
     document.body.appendChild(themeBtn);
 
+    function updateLogos(theme) {
+        const logos = document.querySelectorAll('.nav-logo, .footer-logo, .faq-logo-img');
+        logos.forEach(logo => {
+            if (theme === 'light') {
+                logo.src = logo.src.replace('logo.png', 'logo_1.png');
+            } else {
+                logo.src = logo.src.replace('logo_1.png', 'logo.png');
+            }
+        });
+    }
+
     const currentTheme = localStorage.getItem('theme') || 'dark';
     if (currentTheme === 'light') {
         document.body.classList.add('light-theme');
         themeBtn.innerHTML = '🌙';
+        updateLogos('light');
     } else {
         document.body.classList.remove('light-theme');
         themeBtn.innerHTML = '☀️';
+        updateLogos('dark');
     }
 
     themeBtn.addEventListener('click', () => {
@@ -509,6 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLight = document.body.classList.contains('light-theme');
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
         themeBtn.innerHTML = isLight ? '🌙' : '☀️';
+        updateLogos(isLight ? 'light' : 'dark');
     });
 });
 

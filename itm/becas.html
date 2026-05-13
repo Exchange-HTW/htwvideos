@@ -26,40 +26,243 @@
             margin-top: auto;
         }
 
-        .becas-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-            width: 100%;
+        /* Glassmorphism Timeline Styles */
+        .becas-timeline-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            position: relative;
+            padding: 0 1rem;
         }
 
-        .becas-image-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px var(--shadow-color);
-            transition: transform 0.3s ease;
+        /* Timeline center line */
+        .becas-timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-50%);
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: background 0.3s, box-shadow 0.3s;
         }
 
-        .becas-image-card:hover {
-            transform: translateY(-5px);
+        body.light-theme .becas-timeline-container::before {
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
-        .becas-image-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+        .becas-timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
         }
 
-        .becas-step {
-            padding: 1rem;
-            text-align: center;
-            font-weight: 600;
+        /* Timeline dot */
+        .becas-timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 10px rgba(255, 255, 255, 0.5);
+            z-index: 1;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        body.light-theme .becas-timeline-item::after {
+            box-shadow: 0 0 0 4px var(--bg-color), 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .becas-timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .becas-timeline-content {
+            width: 45%;
+            padding: 2.5rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
             color: var(--text-primary);
-            border-top: 1px solid var(--border-color);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, background 0.3s, border 0.3s, box-shadow 0.3s;
+        }
+
+        body.light-theme .becas-timeline-content {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .becas-timeline-content:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .becas-timeline-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .becas-timeline-content h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+        }
+
+        .becas-timeline-content p,
+        .becas-timeline-content ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .becas-timeline-content ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .becas-timeline-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .becas-timeline-content a {
+            color: #4da6ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .becas-timeline-content a:hover {
+            color: #80c1ff;
+            text-decoration: underline;
+        }
+
+        body.light-theme .becas-timeline-content a {
+            color: #0066cc;
+        }
+
+        body.light-theme .becas-timeline-content a:hover {
+            color: #004d99;
+        }
+
+        /* Float Animation for Images */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .becas-timeline-image {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            z-index: 2;
+        }
+
+        .becas-timeline-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            animation: float 6s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: box-shadow 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .becas-timeline-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        body.light-theme .becas-timeline-image img {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .becas-timeline-image img:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .becas-timeline-image img:nth-child(3) {
+            animation-delay: 3s;
+        }
+
+        .becas-timeline-image img:nth-child(4) {
+            animation-delay: 4.5s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .becas-timeline-container::before {
+                left: 20px;
+            }
+
+            .becas-timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 4rem;
+            }
+
+            .becas-timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .becas-timeline-item::after {
+                left: 20px;
+                top: 30px;
+            }
+
+            .becas-timeline-content,
+            .becas-timeline-image {
+                width: 100%;
+                padding-left: 60px;
+                margin-bottom: 2rem;
+                box-sizing: border-box;
+            }
+
+            .becas-timeline-content {
+                padding-top: 1.5rem;
+            }
+
+            .becas-timeline-image {
+                padding-left: 60px;
+                padding-right: 1rem;
+            }
         }
     </style>
 </head>
@@ -78,6 +281,7 @@
             <div class="nav-links">
                 <a href="index.html#videos" class="nav-link">Videos</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="guias.html" class="nav-link">Guías</a>
                 <a href="index.html#collaborate" class="btn-primary-outline">Contact Lab</a>
             </div>
 
@@ -108,42 +312,117 @@
                 </div>
             </div>
         </div>
-        <div class="faq-bottom-half">
-            <div class="container container-card">
-                <div class="becas-gallery">
-                    <!-- 8 images -->
-                    <div class="becas-image-card">
-                        <img src="../images/1l.png" alt="Ejemplo 1">
-                        <div class="becas-step">Paso 1</div>
+        <div class="faq-bottom-half" style="background: transparent;">
+            <div class="container">
+                <div class="becas-timeline-container">
+
+                    <!-- Paso 1 y 2 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Pasos 1 y 2: Trayectoria Académica</h3>
+                            <p>En la sección de trayectoria académica se debe registrar el estudio de ingeniería del ITM
+                                Mérida.</p>
+                            <p style="margin-top: 1rem;">
+                                <a href="https://rizoma.conahcyt.mx/" target="_blank" rel="noopener noreferrer">Plataforma Rizoma (Registro de Beca) &rarr;</a><br>
+                                <small style="color: var(--text-secondary); display: inline-block; margin-top: 0.5rem;">Página oficial para registrarse cuando la convocatoria esté abierta.</small>
+                            </p>
+                            <p
+                                style="background: rgba(255, 184, 77, 0.1); border-left: 4px solid #ffb84d; padding: 1rem; border-radius: 4px; color: #ffb84d; margin-top: 1rem;">
+                                &#128161; <strong>Tip de búsqueda:</strong> Para encontrar la escuela en el buscador,
+                                asegúrate de escribirla completamente en <strong>mayúsculas y sin acentos</strong>.
+                            </p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/1l.png" alt="Paso 1">
+                            <img src="../images/8l.png" alt="Paso 2">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/8l.png" alt="Ejemplo 2">
-                        <div class="becas-step">Paso 2</div>
+
+                    <!-- Paso 3 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 3: Escuela de Destino</h3>
+                            <p>Aquí se debe agregar la escuela de Alemania a la que vas a aplicar (<strong>HTW
+                                    Saar</strong>) y buscar la maestría correspondiente en la plataforma.</p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/2l.png" alt="Paso 3">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/2l.png" alt="Ejemplo 3">
-                        <div class="becas-step">Paso 3</div>
+
+                    <!-- Paso 4 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 4: Áreas Relacionadas</h3>
+                            <p>En esta sección se seleccionan las áreas de conocimiento y especialidades
+                                que estén relacionadas directamente a la maestría.</p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/3l.png" alt="Paso 4">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/3l.png" alt="Ejemplo 4">
-                        <div class="becas-step">Paso 4</div>
+
+                    <!-- Paso 5 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 5: Fechas del Programa</h3>
+                            <p>Se determinan y colocan las fechas exactas conforme a los inicios y fines de semestre
+                                dados por la HTW. <strong>Considera que la fecha límite (duración del programa) es de 2
+                                    años.</strong></p>
+                            <p style="margin-top: 1rem;">
+                                <a href="https://www.htwsaar.de/studium-und-lehre/im-studium/organisation/semestertermine"
+                                    target="_blank" rel="noopener noreferrer">Ver fechas oficiales de semestre en HTW
+                                    &rarr;</a>
+                            </p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/4l.png" alt="Paso 5">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/4l.png" alt="Ejemplo 5">
-                        <div class="becas-step">Paso 5</div>
+
+                    <!-- Paso 6 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 6: Apoyos y Seguro Médico</h3>
+                            <p>Aquí se seleccionan los dos apartados correspondientes: el <strong>apoyo general
+                                    mensual</strong> y el <strong>apoyo para el gasto de seguro médico</strong>.</p>
+
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/9l.png" alt="Paso 6">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/9l.png" alt="Ejemplo 6">
-                        <div class="becas-step">Paso 6</div>
+
+                    <!-- Paso 7 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 7: Especificaciones</h3>
+                            <p>Se debe proporcionar el enlace a la página web de la maestría y adjuntar el archivo
+                                oficial con las especificaciones y plan de estudios de la misma. Este
+                                documento resultante debe estar traducido.</p>
+                            <p
+                                style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1rem; border-radius: 4px; color: #ef4444; margin-top: 1rem;">
+                                &#9888; <strong>¡Nota Importante!</strong> Todos los documentos que se encuentren en
+                                otro idioma deben ser traducidos al español.
+                            </p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/6l.png" alt="Paso 7">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/6l.png" alt="Ejemplo 7">
-                        <div class="becas-step">Paso 7</div>
+
+                    <!-- Paso 8 -->
+                    <div class="becas-timeline-item">
+                        <div class="becas-timeline-content">
+                            <h3>Paso 8: Archivos Requeridos</h3>
+                            <p>Finalmente, carga todos los archivos y documentos oficiales adicionales que sean
+                                solicitados por la plataforma para completar el trámite.</p>
+                        </div>
+                        <div class="becas-timeline-image">
+                            <img src="../images/7l.png" alt="Paso 8">
+                        </div>
                     </div>
-                    <div class="becas-image-card">
-                        <img src="../images/7l.png" alt="Ejemplo 8">
-                        <div class="becas-step">Paso 8</div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -162,6 +441,7 @@
                     <h4>Categories</h4>
                     <a href="index.html#videos">Videos</a>
                     <a href="faq.html">FAQ</a>
+                    <a href="guias.html">Guías</a>
                     <a href="index.html#collaborate">Contact</a>
                 </div>
                 <div class="footer-links">
@@ -185,7 +465,7 @@
     <script src="../script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const images = Array.from(document.querySelectorAll('.becas-image-card img'));
+            const images = Array.from(document.querySelectorAll('.becas-timeline-image img'));
             if (images.length === 0) return;
 
             // Make images look clickable
