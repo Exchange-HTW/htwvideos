@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Systems Neuroscience &amp; Neurotechnology Unit (SNNU) – Multidisciplinary research on multiscale systems neuroscience, quantitative neuromodeling and neuroimaging.">
+    <title>SNN-Unit | Saarland University — ITM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo-link">
+                <img src="../images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
+                <span class="logo-text">SNN-Unit<br><small>Systems Neuroscience</small></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="guias.html" class="nav-link">Guías</a>
+                <a href="#collaborate" class="btn-primary-outline">Contact Lab</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div style="padding-top: 100px;"></div>
+
+    <!-- VIDEOS SECTION -->
+    <section id="videos" class="videos-section" style="background: transparent;">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <h2>¿Listo para impulsar <span class="text-gradient">tu futuro en ingeniería?</span></h2>
+
+                <div class="intro-text-wrapper"
+                    style="text-align: justify; line-height: 1.8; max-width: 900px; margin: 2.5rem auto 1rem; color: var(--text-muted); font-size: 1.1rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
+                    <p style="margin-bottom: 1.5rem;"><strong>Si te encuentras estudiando tus últimos semestres en
+                            Ingeniería Biomédica, Eléctrica o Electrónica</strong> en el Instituto Tecnológico de
+                        Mérida o te interesa hacer una <strong><span class="custom-tooltip-trigger"
+                                onclick="toggleTooltip(this, event)">maestria en ingenieria en neurociencias<span
+                                    class="custom-tooltip"
+                                    style="cursor: pointer; text-transform: none; font-weight: normal;"
+                                    onclick="event.stopPropagation(); window.open('https://www.htwsaar.de/en/studieren/studiengaenge/ingenieurwissenschaften/master/neural-engineering-msc-1', '_blank');">https://htwsaar.de/master...</span></span></strong>,
+                        te invitamos a realizar
+                        tus prácticas profesionales con nosotros en el <strong><span class="custom-tooltip-trigger"
+                                onclick="toggleTooltip(this, event)">SNNU
+                                (Systems Neuroscience &amp; Neurotechnology Unit)<span class="custom-tooltip"
+                                    style="cursor: pointer; text-transform: none; font-weight: normal;"
+                                    onclick="event.stopPropagation(); window.open('https://snn-unit.de', '_blank');">https://snn-unit.de</span></span></strong>,
+                        ubicado en htw saar, universidad
+                        socia del ITM.</p>
+
+                    <p style="margin-bottom: 1.5rem;">Nuestros laboratorios se encuentran en <span
+                            class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Saarbrücken<span
+                                class="custom-tooltip image-tooltip">
+                                <span class="saarbrucken-slideshow">
+                                    <img src="../images/Rathaus.png" alt="Saarbrücken Day">
+                                    <img src="../images/RathausNacht.png" alt="Saarbrücken Night"
+                                        class="saarbrucken-night">
+                                </span>
+                            </span></span><strong>,
+                            <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Alemania<span
+                                    class="custom-tooltip image-tooltip">
+                                    <span class="slideshow-6">
+                                        <img src="../images/1-Frank.png" alt="Alemania Placeholder 1">
+                                        <img src="../images/2-Col.png" alt="Alemania Placeholder 2">
+                                        <img src="../images/3-Hamburg.png" alt="Alemania Placeholder 3">
+                                        <img src="../images/4-Bavaria.png" alt="Alemania Placeholder 4">
+                                        <img src="../images/5-Bavaria.png" alt="Alemania Placeholder 5">
+                                        <img src="../images/6-Bavaria.png" alt="Alemania Placeholder 6">
+                                    </span>
+                                </span></span></strong>, y realizamos investigación multidisciplinaria en neurociencia
+                        de sistemas
+                        a múltiples escalas, neuromodelado cuantitativo y neuroimagen.</p>
+
+                    <p style="margin-bottom: 1.5rem;">Durante tu estancia, podrás trabajar bajo la supervisión de alguno
+                        de nuestros colaboradores en una de nuestras líneas de investigación. Para más detalles, puedes
+                        visitar nuestra página web. Nuestros colaboradores hablan alemán, inglés y, en algunos casos,
+                        español.</p>
+
+                    <p style="margin-bottom: 0;">Para más información, contáctanos en el correo <a
+                            href="mailto:exchange@snn-unit.de"
+                            style="color: var(--primary-color); text-decoration: none; font-weight: 500;">exchange@snn-unit.de</a>
+                        Si deseas conocer más sobre el proceso interno dentro del Tecnológico, puedes contactar a la
+                        <span class="custom-tooltip-trigger" onclick="toggleTooltip(this, event)">Ing. Margarita
+                            Álvarez<span class="custom-tooltip copy-tooltip" style="cursor: pointer;"
+                                onclick="copyTooltipText(this, event)"
+                                data-text="maria.ac@merida.tecnm.mx">maria.ac@merida.tecnm.mx</span></span>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="video-grid fade-in-up stagger-1">
+                <!-- Video 1 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/sAiXZS1GNrI?rel=0&enablejsapi=1"
+                            title="Researcher Interview 1"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3> Roger Vargas - Investigador Asociado SNN Unit</h3>
+                        <p>Egresado de Ingeniería Eléctrica del ITM. Inició como residente en la HTW Saar y continuó con
+                            la maestría en Neural Engineering. Actualmente trabaja como investigador asociado en la
+                            SNN-Unit, combinando técnicas de programación y medición de biopotenciales.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/n89GmJmPoMI?rel=0&enablejsapi=1"
+                            title="Lab Facility Tour"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Gerardo Romero – Audio Inmersivo / Ambisonics</h3>
+                        <p>Egresado de Ingeniería Electrónica del Instituto Tecnológico de Mérida. Su tesis de maestría
+                            se enfoca en audio inmersivo con el formato Ambisonics, vinculado a entornos de realidad
+                            virtual.</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/OJKJdmR6tQU?rel=0&enablejsapi=1"
+                            title="Placeholder Video 5"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Ximena Quijano – Potenciales Evocados Auditivos</h3>
+                        <p>Egresada de Ingeniería Biomédica del Instituto Tecnológico de Mérida. Su proyecto midió
+                            potenciales evocados mediante estimulaciones auditivas para realizar análisis objetivos y
+                            subjetivos de las respuestas de los sujetos, utilizando MATLAB y ARS Studio.</p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/bZ43mQqkvGk?rel=0&enablejsapi=1"
+                            title="Researcher Interview 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Juan Ek – Potenciales Evocados Olfativos</h3>
+                        <p>Egresado de Ingeniería Biomédica del Instituto Tecnológico de Mérida. Su proyecto implementó
+                            un dispositivo generador de esencias en un ambiente de inmersión para medir potenciales
+                            evocados olfativos.</p>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/mqE1lQUY-kA?rel=0&enablejsapi=1"
+                            title="Neurotechnologies Explained"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Karla Medina – Implantes Cocleares</h3>
+                        <p>Egresada de Ingeniería Biomédica del Instituto Tecnológico de Mérida. Su project work en la
+                            maestría de Neural Engineering trabaja con simulaciones de audición con implantes cocleares,
+                            analizando configuraciones para mejorar la calidad de vida de los pacientes.</p>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/MaiuZivgVPo?rel=0&enablejsapi=1"
+                            title="Placeholder Video 6"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Fabián Hernández – Neural Engineering</h3>
+                        <p>Egresado de Ingeniería Biomédica del Tecnológico de Mérida. Su proyecto implementó
+                            inteligencias artificiales para mejorar la neuroergonomía en entornos de trabajo de alta
+                            demanda mental. Actualmente cursa la maestría en Neural Engineering en Alemania.</p>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/XoXUE8ZHJUQ?rel=0&enablejsapi=1"
+                            title="Placeholder Video 7"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Fernanda Flota – Estimulación Auditiva en Simulador de Conducción</h3>
+                        <p>Egresada del Tecnológico de Mérida. Su proyecto de tesis consistió en desarrollar estímulos
+                            auditivos para experimentos realizados en un simulador de coche, utilizando herramientas de
+                            inteligencia artificial.</p>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card glass-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/wQhwiYR9x9g?rel=0&enablejsapi=1"
+                            title="Placeholder Video 8"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Genaro Díaz Ramírez – Análisis de Señales EEG</h3>
+                        <p>Egresado de Ingeniería Biomédica del Tecnológico de Mérida. Realizó su residencia en 2025
+                            analizando señales electroencefalográficas para evaluar niveles de atención mediante
+                            procesamiento digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / APPLY SECTION -->
+    <section id="collaborate" class="contact-section"
+        style="padding: 100px 0; background-color: var(--bg-dark); position: relative;">
+        <!-- Simple background glow -->
+        <div
+            style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 300px; background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, rgba(15,23,42,0) 70%); pointer-events: none;">
+        </div>
+
+        <div class="container">
+            <div class="section-header text-center fade-in-up" style="margin-bottom: 3rem;">
+                <h2>Join the <span class="text-gradient">SNN-Unit</span></h2>
+                <p>Generate a standardized application email to contact our Principal Investigators.</p>
+            </div>
+
+            <div class="contact-wrapper fade-in-up">
+
+                <!-- Email Generator Form -->
+                <div class="glass-card contact-form-card">
+                    <form id="emailGeneratorForm" onsubmit="generateEmail(event)">
+                        <div class="contact-form-grid">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="studentName"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Full
+                                    Name</label>
+                                <input type="text" id="studentName" required placeholder="Delio Perez"
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit;">
+                            </div>
+
+                            <!-- Position of Interest -->
+                            <div class="form-group">
+                                <label for="position"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Position
+                                    of Interest</label>
+                                <select id="position" required
+                                    style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
+                                    <option value="" disabled selected>Select a position...</option>
+                                    <option value="Ph.D. Student">Ph.D. Student</option>
+                                    <option value="Postdoctoral Researcher">Postdoctoral Researcher</option>
+                                    <option value="Master Thesis Student">Master Thesis Student</option>
+                                    <option value="Research Assistant">Research Assistant</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Lab of Interest -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="lab"
+                                style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Lab
+                                / Research Area of Interest</label>
+                            <select id="lab" required
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
+                                <option value="" disabled selected>Select a lab...</option>
+                                <option value="Exchange Student">Exchange Students</option>
+                                <option value="Mindscan Lab (Dr. F. I. Corona-Strauss)">Mindscan Lab (Dr. F. I.
+                                    Corona-Strauss)</option>
+                            </select>
+                        </div>
+
+                        <!-- Introduction (3 paragraphs max) -->
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="intro"
+                                style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">
+                                <span>Brief Introduction &amp; Motivation</span>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 short paragraphs)</span>
+                            </label>
+                            <textarea id="intro" required rows="6"
+                                placeholder="I am writing to express my interest in joining the SNN-Unit...&#10;&#10;My background is in [Field] and I have experience with...&#10;&#10;I am particularly interested in your work on..."
+                                style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-100"
+                            style="width: 100%; justify-content: center; padding: 1rem;">Generate Email Draft</button>
+                    </form>
+                </div>
+
+                <!-- Result Area (Hidden initially) -->
+                <div id="emailResult" class="glass-card contact-form-card"
+                    style="display: none; border-top: 4px solid var(--primary-color);">
+                    <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem;">Preview &amp; Send</h3>
+
+                    <div
+                        style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.9rem;">
+                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--text-muted);">To:</span> <span
+                                id="outTo" style="color: var(--secondary-color);"></span></div>
+                        <div style="margin-bottom: 1rem;"><span style="color: var(--text-muted);">Subject:</span> <span
+                                id="outSubject" style="color: var(--text-light); font-weight: bold;"></span></div>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                            <span style="color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Body:</span>
+                            <div id="outBody"
+                                style="color: var(--text-light); white-space: pre-wrap; line-height: 1.6;"></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-result-actions">
+                        <button onclick="copyEmailData()" class="btn-primary-outline">Copy Text</button>
+                        <a id="mailToLink" href="#" class="btn-primary">Open in Mail App</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Lab Logo" class="footer-logo">
+                    <h3>SNN-Unit</h3>
+                    <p>Systems Neuroscience &amp; Neurotechnology Unit</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <a href="#videos">Videos</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="guias.html">Guías</a>
+                    <a href="#collaborate">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p>Saarbrücken, Germany</p>
+                    <p>Email: exchange@snn-unit.de</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">IG</a>
+                        <a href="https://www.youtube.com/@SNNUComm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Youtube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <!-- TUTORIAL ANIMATION SCRIPT -->
+    <script>
+        (function () {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100vw';
+            canvas.style.height = '100vh';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '999999';
+            canvas.style.transition = 'opacity 1s ease';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const targets = Array.from(document.querySelectorAll('.custom-tooltip-trigger')).filter(el => {
+                const rect = el.getBoundingClientRect();
+                return rect.width > 0 && rect.height > 0;
+            });
+
+            if (targets.length === 0) {
+                canvas.remove();
+                return;
+            }
+
+            function drawDottedHand(x, y, clickYOffset) {
+                ctx.save();
+                ctx.translate(x, y + clickYOffset);
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowBlur = 6;
+
+                const dots = [
+                    [0, 0], [0, 5], [0, 10],
+                    [6, 12], [12, 14], [18, 16],
+                    [-7, 16], [-5, 21],
+                    [0, 18], [6, 20], [12, 22],
+                    [-2, 25], [4, 27], [10, 29]
+                ];
+
+                dots.forEach(([dx, dy]) => {
+                    ctx.beginPath();
+                    ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                ctx.restore();
+            }
+
+            let currentIndex = 0;
+            let cursorX = w / 2;
+            let cursorY = h + 50;
+            let state = 'moving';
+            let timer = 0;
+            let lastTime = performance.now();
+            let clickOffset = 0;
+
+            function animate(time) {
+                const dt = time - lastTime;
+                lastTime = time;
+
+                ctx.clearRect(0, 0, w, h);
+
+                if (currentIndex >= targets.length) {
+                    canvas.style.opacity = '0';
+                    setTimeout(() => canvas.remove(), 1000);
+                    return;
+                }
+
+                const targetEl = targets[currentIndex];
+                const rect = targetEl.getBoundingClientRect();
+                const targetX = rect.left + rect.width / 2;
+                const targetY = rect.bottom + 5;
+
+                if (state === 'moving') {
+                    cursorX += (targetX - cursorX) * 0.05;
+                    cursorY += (targetY - cursorY) * 0.05;
+
+                    const dist = Math.hypot(targetX - cursorX, targetY - cursorY);
+                    if (dist < 4) {
+                        state = 'clicking';
+                        timer = 0;
+                    }
+                } else if (state === 'clicking') {
+                    timer += dt;
+                    if (timer < 150) {
+                        clickOffset = (timer / 150) * 8;
+                    } else if (timer < 300) {
+                        if (!targetEl.dataset.animHl) {
+                            targetEl.dataset.animHl = "true";
+                            const originalColor = targetEl.style.color;
+                            const originalShadow = targetEl.style.textShadow;
+                            const originalTrans = targetEl.style.transition;
+                            targetEl.style.transition = 'all 0.3s ease';
+                            targetEl.style.color = '#3b82f6';
+                            targetEl.style.textShadow = '0 0 10px rgba(59, 130, 246, 0.8)';
+                            setTimeout(() => {
+                                targetEl.style.color = originalColor;
+                                targetEl.style.textShadow = originalShadow;
+                                setTimeout(() => { targetEl.style.transition = originalTrans; }, 300);
+                            }, 500);
+                        }
+                        clickOffset = 8 - ((timer - 150) / 150) * 8;
+                    } else if (timer > 800) {
+                        state = 'moving';
+                        clickOffset = 0;
+                        currentIndex++;
+                    }
+                }
+
+                drawDottedHand(cursorX, cursorY, clickOffset);
+                requestAnimationFrame(animate);
+            }
+
+            setTimeout(() => {
+                lastTime = performance.now();
+                requestAnimationFrame(animate);
+            }, 1000);
+
+        })();
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7197c89933e74d23b2c9cda63f534531"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

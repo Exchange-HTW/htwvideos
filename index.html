@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SNN-Unit Exchange Program — Selecciona tu universidad para conocer las oportunidades de residencia en Saarbrücken, Alemania.">
+    <title>SNN-Unit | Programa de Intercambio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #080d1a;
+            --surface:   rgba(255,255,255,0.04);
+            --border:    rgba(255,255,255,0.08);
+            --primary:   #6366f1;
+            --primary2:  #818cf8;
+            --accent:    #38bdf8;
+            --text:      #e2e8f0;
+            --muted:     #94a3b8;
+            --radius:    20px;
+        }
+
+        html, body {
+            width: 100%; height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ── Animated starfield ── */
+        #stars-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── Layout ── */
+        .page {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            gap: 3rem;
+        }
+
+        /* ── Hero header ── */
+        .hero {
+            text-align: center;
+            max-width: 680px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-size: 0.78rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.06em;
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h1 .grad {
+            background: linear-gradient(135deg, var(--primary2) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--muted);
+            line-height: 1.75;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ── Cards grid ── */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        .school-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            padding: 2rem 2rem 1.8rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--surface);
+            backdrop-filter: blur(18px);
+            text-decoration: none;
+            color: var(--text);
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .school-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: inherit;
+        }
+
+        .school-card.itm::before {
+            background: radial-gradient(circle at 30% 30%, rgba(99,102,241,0.18) 0%, transparent 70%);
+        }
+
+        .school-card.anahuac::before {
+            background: radial-gradient(circle at 70% 30%, rgba(56,189,248,0.18) 0%, transparent 70%);
+        }
+
+        .school-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.18);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+
+        .school-card:hover::before { opacity: 1; }
+
+        .card-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .school-card.itm .card-icon { background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.3); }
+        .school-card.anahuac .card-icon { background: rgba(56,189,248,0.12); border-color: rgba(56,189,248,0.3); }
+
+        .card-body { position: relative; z-index: 1; }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.6rem;
+        }
+
+        .school-card.itm .card-tag { background: rgba(99,102,241,0.18); color: var(--primary2); }
+        .school-card.anahuac .card-tag { background: rgba(56,189,248,0.15); color: var(--accent); }
+
+        .card-body h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-cta {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.55rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            transition: all 0.25s ease;
+        }
+
+        .school-card.itm .card-cta {
+            background: rgba(99,102,241,0.2);
+            color: var(--primary2);
+            border-color: rgba(99,102,241,0.35);
+        }
+
+        .school-card.anahuac .card-cta {
+            background: rgba(56,189,248,0.15);
+            color: var(--accent);
+            border-color: rgba(56,189,248,0.3);
+        }
+
+        .school-card:hover .card-cta {
+            filter: brightness(1.15);
+        }
+
+        .card-arrow {
+            font-size: 1.3rem;
+            opacity: 0.4;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .school-card:hover .card-arrow {
+            transform: translateX(6px);
+            opacity: 0.9;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            position: relative; z-index: 1;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+            opacity: 0.6;
+            padding-bottom: 1.5rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .cards { grid-template-columns: 1fr; max-width: 380px; }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="stars-canvas"></canvas>
+
+    <main class="page">
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-badge">SNN-Unit · Exchange Program</div>
+            <h1>Elige tu <span class="grad">universidad</span></h1>
+            <p>Selecciona tu institución para conocer los testimonios, el proceso y la información de residencia en
+                Saarbrücken, Alemania.</p>
+        </header>
+
+        <!-- School Selector Cards -->
+        <div class="cards" role="list">
+
+            <!-- ITM Card -->
+            <a href="itm/" class="school-card itm" role="listitem" id="card-itm">
+                <div class="card-icon">🎓</div>
+                <div class="card-body">
+                    <span class="card-tag">ITM</span>
+                    <h2>Instituto Tecnológico de Mérida</h2>
+                    <p>Testimonios de egresados de Ingeniería Biomédica, Eléctrica y Electrónica del ITM que realizaron su residencia con nosotros.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="card-cta">Ver videos &amp; FAQ</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- Anáhuac Card -->
+            <a href="anahuac/" class="school-card anahuac" role="listitem" id="card-anahuac">
+                <div class="card-icon">🏛️</div>
+                <div class="card-body">
+                    <span class="card-tag">Anáhuac</span>
+                    <h2>Universidad Anáhuac</h2>
+                    <p>Oportunidades de residencia e intercambio para estudiantes de la Universidad Anáhuac en el laboratorio SNN-Unit.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="card-cta">Ver videos &amp; FAQ</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Systems Neuroscience &amp; Neurotechnology Unit — HTW Saar, Saarbrücken, Alemania</p>
+    </footer>
+
+    <!-- Starfield Canvas -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('stars-canvas');
+            const ctx = canvas.getContext('2d');
+            let W, H, stars = [];
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+
+            function init() {
+                stars = [];
+                const count = Math.floor((W * H) / 6000);
+                for (let i = 0; i < count; i++) {
+                    stars.push({
+                        x: Math.random() * W,
+                        y: Math.random() * H,
+                        r: Math.random() * 1.4 + 0.3,
+                        alpha: Math.random() * 0.6 + 0.1,
+                        speed: Math.random() * 0.015 + 0.005,
+                        phase: Math.random() * Math.PI * 2
+                    });
+                }
+            }
+
+            let t = 0;
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                t += 0.008;
+                stars.forEach(s => {
+                    const a = s.alpha * (0.5 + 0.5 * Math.sin(t * s.speed * 80 + s.phase));
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(200,215,255,${a})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', () => { resize(); init(); });
+            resize(); init(); draw();
+        })();
+    </script>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7197c89933e74d23b2c9cda63f534531"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

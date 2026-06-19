@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guías - Systems Neuroscience &amp; Neurotechnology Unit (SNNU) — ITM.">
+    <title>Guías | SNN-Unit | Saarland University — ITM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+
+        /* Guías Section Styles */
+        .guias-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .guias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .guia-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        body.light-theme .guia-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .guia-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.light-theme .guia-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .guia-card h3 {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* Linked Sub-buttons for Maestría */
+        .maestria-nodes {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2.5rem;
+            animation: float-nodes-anim 4s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .node-line {
+            height: 3px;
+            width: 40px;
+            background: var(--primary-color);
+            border-radius: 2px;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .node-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        .node-btn:hover {
+            transform: scale(1.1);
+            background: var(--secondary-color);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        @keyframes float-nodes-anim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 768px) {
+            .maestria-nodes {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .node-line {
+                width: 3px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo-link">
+                <img src="../images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
+                <span class="logo-text">SNN-Unit<br><small>Systems Neuroscience</small></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#videos" class="nav-link">Videos</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="guias.html" class="nav-link" style="color: var(--text-primary);">Guías</a>
+                <a href="index.html#collaborate" class="btn-primary-outline">Contact Lab</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div style="padding-top: 100px;"></div>
+
+    <!-- GUIAS SECTION -->
+    <section id="faq-disclaimer" class="faq-disclaimer-section">
+        <div class="faq-top-half">
+            <div class="container faq-header-container">
+                <div class="faq-title">
+                    <h1 class="faq-main-heading">Guías</h1>
+                    <span class="faq-subtitle">Paso a Paso</span>
+                </div>
+                <div class="faq-logos">
+                    <div class="faq-logo-img-wrapper">
+                        <img src="../images/logo.png" alt="University Logo" class="faq-logo-img">
+                    </div>
+                    <div class="faq-logo-main">
+                        <span>Systems Neuroscience</span>
+                        <span class="faq-logo-ampersand">&amp;</span>
+                        <span>Neurotechnology Unit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-bottom-half">
+            <div class="container container-card" style="padding-top: 0;">
+                <div class="guias-grid fade-in-up stagger-1" style="padding: 2rem 0;">
+                    <!-- Prácticas Card -->
+                    <a href="#" class="guia-card">
+                        <h3>Prácticas</h3>
+                    </a>
+
+                    <!-- Maestría Card -->
+                    <div class="guia-card" style="cursor: default;">
+                        <h3>Maestría</h3>
+                        <div class="maestria-nodes">
+                            <a href="vpd.html" class="node-btn">VPD ↗</a>
+                            <div class="node-line"></div>
+                            <a href="becas.html" class="node-btn">Beca ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Lab Logo" class="footer-logo">
+                    <h3>SNN-Unit</h3>
+                    <p>Systems Neuroscience &amp; Neurotechnology Unit</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <a href="index.html#videos">Videos</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="guias.html">Guías</a>
+                    <a href="index.html#collaborate">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p>Saarbrücken, Germany</p>
+                    <p>Email: exchange@snn-unit.de</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">IG</a>
+                        <a href="https://www.youtube.com/@SNNUComm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Youtube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7197c89933e74d23b2c9cda63f534531"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
