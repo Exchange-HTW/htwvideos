@@ -1,0 +1,476 @@
+/* anahuac.css - Estilos Exclusivos para Universidad Anáhuac */
+
+:root {
+    --anahuac-orange: #ff5900;
+    --anahuac-bg: #000000;
+    --anahuac-surface: #0a0a0a;
+    --anahuac-text: #ffffff;
+    --anahuac-text-muted: #a1a1aa;
+    --primary-rgb: 255, 89, 0;
+    /* Anáhuac orange */
+}
+
+body.anahuac-theme {
+    background-color: var(--anahuac-bg);
+    color: var(--anahuac-text);
+}
+
+/* Light Theme Overrides for Anáhuac */
+body.anahuac-theme.light-theme {
+    --anahuac-bg: #ffffff;
+    --anahuac-surface: #f5f5f7;
+    --anahuac-text: #0a0a0a;
+    --anahuac-text-secondary: #3c3c43;
+    --anahuac-text-muted: #6b6b72;
+}
+
+/* Overrides para UI Compartida (Botones / Gradientes) */
+body.anahuac-theme .btn-primary {
+    background: linear-gradient(135deg, #cc4700 0%, var(--anahuac-orange) 50%, #ff8540 100%);
+    box-shadow: 0 0 0 1px rgba(255, 89, 0, 0.5), 0 4px 24px rgba(255, 89, 0, 0.4);
+}
+
+body.anahuac-theme .btn-primary:hover {
+    box-shadow: 0 0 0 2px rgba(255, 89, 0, 0.8), 0 8px 40px rgba(255, 89, 0, 0.6);
+}
+
+body.anahuac-theme .btn-primary-outline {
+    color: var(--anahuac-orange);
+    border-color: var(--anahuac-orange);
+}
+
+body.anahuac-theme .btn-primary-outline:hover {
+    background: rgba(255, 89, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 89, 0, 0.4);
+}
+
+body.anahuac-theme .text-gradient {
+    background: linear-gradient(135deg, #ff8540 0%, var(--anahuac-orange) 50%, #cc4700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.anahuac-theme .particle {
+    background: var(--anahuac-orange);
+    box-shadow: 0 0 10px rgba(255, 89, 0, 0.6);
+}
+
+/* =========================================
+   ROULETTE MENU
+   ========================================= */
+.roulette-header {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(to bottom, var(--anahuac-bg) 60%, transparent 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.roulette-header.scrolled {
+    padding-top: 10px;
+    background: var(--anahuac-bg);
+    opacity: 0.97;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 89, 0, 0.3);
+}
+
+.roulette-container {
+    position: relative;
+    width: 500px;
+    height: 170px;
+    left: 50%;
+    margin-left: -250px;
+    /* Reducido desde 250px para levantar el arco */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Native responsiveness downscaling */
+@media (max-width: 600px) {
+    .roulette-container {
+        transform: scale(0.65);
+        transform-origin: top center;
+        margin-bottom: -59.5px;
+    }
+    .htw-saar-txt {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .roulette-container {
+        transform: scale(0.55);
+        transform-origin: top center;
+        margin-bottom: -76.5px;
+    }
+    .htw-saar-txt h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.roulette-header.scrolled .roulette-container {
+    transform: scale(0.5);
+    transform-origin: top center;
+    margin-bottom: -85px;
+    /* Compensa la altura contraída (170 * 0.5) */
+}
+
+.roulette-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 250px;
+    /* Conserva el arco perfecto original */
+    border: 55px solid #1a1a1a;
+    border-bottom: 0;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 5;
+    clip-path: inset(0 0 80px 0);
+    /* Recorta exactamente los 80px sobrantes */
+}
+
+.roulette-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--anahuac-bg);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    color: var(--anahuac-orange);
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease, box-shadow 0.3s ease;
+    z-index: 10;
+}
+
+.roulette-btn.logo-btn {
+    background: var(--anahuac-orange);
+    color: #fff;
+    width: 105px;
+    height: 105px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 4px #ffffff inset, 0 0 0 6px #1a1a1a inset;
+    z-index: 15;
+}
+
+.roulette-btn.logo-btn span {
+    font-size: 3.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 #ffffff;
+    letter-spacing: -2px;
+}
+
+.roulette-btn.logo-btn img {
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+    z-index: 10;
+}
+
+/* Button Positioning mathematically precise */
+/* Se subieron los botones ~20 grados sobre la pista, situados exactos a la altura Y=170 */
+.pos-left {
+    left: 42.4px;
+    top: 170px;
+}
+
+.pos-right {
+    left: 457.6px;
+    top: 170px;
+}
+
+.pos-center {
+    left: 250px;
+    top: 27.5px;
+}
+
+.roulette-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 89, 0, 0.4);
+    color: #fff;
+}
+
+.roulette-btn.logo-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 0 30px rgba(255, 89, 0, 0.6);
+}
+
+/* Header Text (htw saar) */
+.htw-saar-txt {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.htw-saar-txt h2 {
+    font-size: 2.2rem;
+    color: var(--anahuac-text);
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.htw-saar-desc {
+    font-size: 0.75rem;
+    color: var(--anahuac-text-muted);
+    text-align: left;
+    line-height: 1.2;
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+}
+
+/* =========================================
+   SECIONES Y TIPOGRAFÍA
+   ========================================= */
+.anahuac-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.anahuac-title {
+    color: var(--anahuac-orange);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.anahuac-title2 {
+    color: var(--anahuac-text);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+
+.anahuac-text-column p {
+    font-size: 1rem;
+    color: var(--anahuac-text-secondary, var(--anahuac-text));
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.anahuac-text-column a {
+    color: var(--anahuac-orange);
+    text-decoration: underline;
+}
+
+/* Tooltips override for dark theme */
+.custom-tooltip-trigger {
+    color: var(--anahuac-text);
+}
+
+/* =========================================
+   FAQ OVERRIDES
+   ========================================= */
+body.anahuac-theme .faq-main-heading {
+    color: var(--anahuac-orange);
+}
+
+body.anahuac-theme .faq-subtitle {
+    color: var(--anahuac-text);
+}
+
+/* =========================================
+   STAGGERED VIDEO GRID
+   ========================================= */
+.staggered-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.staggered-video {
+    width: 100%;
+    max-width: 600px;
+    background: transparent;
+}
+
+/* En Desktop, hacer el zigzag */
+@media (min-width: 768px) {
+    .staggered-video {
+        width: 65%;
+    }
+
+    .staggered-video.st-left {
+        align-self: flex-start;
+    }
+
+    .staggered-video.st-right {
+        align-self: flex-end;
+        /* Slight negative margin for overlap feel if desired */
+        margin-top: -30px;
+    }
+}
+
+.anahuac-video-card iframe {
+    border-radius: 12px;
+    border: 1px solid #e0e0e8;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.anahuac-video-info h3 {
+    font-size: 1.1rem;
+    color: var(--anahuac-orange);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.anahuac-video-info p {
+    font-size: 0.85rem;
+    color: #6b6b72;
+    line-height: 1.5;
+}
+
+/* =========================================
+   CUSTOM FOOTER
+   ========================================= */
+.anahuac-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px 40px;
+    background: var(--anahuac-surface);
+    border-top: 1px solid rgba(var(--primary-rgb), 0.1);
+    margin-top: 100px;
+    gap: 30px;
+}
+
+.af-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.af-col-left p {
+    color: var(--anahuac-text);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.af-col-left small {
+    color: var(--anahuac-text-muted);
+}
+
+.af-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.af-col-center h2 {
+    color: var(--anahuac-text);
+    font-size: 1.5rem;
+}
+
+.footer-anahuac-logo {
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+}
+
+.af-col-center .footer-logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--anahuac-orange);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 4px #ffffff inset, 0 0 0 6px #1a1a1a inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.af-col-right {
+    text-align: right;
+    padding-right: 80px;
+    /* Evita que el botón de light/dark tape el texto */
+}
+
+.af-col-right strong {
+    color: var(--anahuac-text);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.af-col-right p {
+    margin-bottom: 5px;
+    color: var(--anahuac-text-muted);
+    font-size: 0.9rem;
+}
+
+.af-socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.af-socials a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #eaeaed;
+    color: var(--anahuac-orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.af-socials a:hover {
+    background: var(--anahuac-orange);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .anahuac-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .af-col-right {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .af-socials {
+        justify-content: center;
+    }
+}

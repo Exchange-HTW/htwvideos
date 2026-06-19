@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa 3D Interactivo de Universidades</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Maps para Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="canvas-container"></div>
+
+    <!-- Indicador de Continente Inferior -->
+    <div id="continent-indicator" class="hidden">
+        Zona actual: <span id="continent-span">Cargando...</span>
+    </div>
+
+    <!-- Panel flotante con la información de la universidad -->
+    <div id="info-panel" class="hidden">
+        <button id="close-btn" aria-label="Cerrar">&times;</button>
+        <h2 id="uni-name">Nombre de la Universidad</h2>
+        <p id="uni-desc">Descripción de la universidad</p>
+    </div>
+
+    <!-- Etiqueta de tooltip en hover -->
+    <div id="tooltip"></div>
+
+    <script type="module" src="main.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7197c89933e74d23b2c9cda63f534531"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAQ - Systems Neuroscience & Neurotechnology Unit (SNNU).">
+    <title>FAQ | SNN-Unit | Saarland University</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Cognitive Neuroscience Lab Logo" class="nav-logo">
+                <span class="logo-text">SNN-Unit<br><small>Systems Neuroscience</small></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#videos" class="nav-link">Videos</a>
+                <a href="faq.html" class="nav-link" style="color: var(--text-primary);">FAQ</a>
+                <a href="itm/guias.html" class="nav-link">Guías</a>
+                <a href="index.html#collaborate" class="btn-primary-outline">Contact Lab</a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div style="padding-top: 100px;"></div>
+
+    <!-- FAQ DISCLAIMER SECTION -->
+    <section id="faq-disclaimer" class="faq-disclaimer-section">
+        <div class="faq-top-half">
+            <div class="container faq-header-container">
+                <div class="faq-title">
+                    <h1 class="faq-main-heading">FAQ</h1>
+                    <span class="faq-subtitle">Internship</span>
+                </div>
+                <div class="faq-logos">
+                    <div class="faq-logo-img-wrapper">
+                        <img src="images/logo.png" alt="University Logo" class="faq-logo-img">
+                    </div>
+                    <div class="faq-logo-main">
+                        <span>Systems Neuroscience</span>
+                        <span class="faq-logo-ampersand">&</span>
+                        <span>Neurotechnology Unit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-bottom-half">
+            <div class="container container-card">
+                <!-- Wrapper for Canva FAQ Images -->
+                <div class="faq-gallery-grid" id="faq-gallery-grid">
+                    <!-- Las portadas serán inyectadas por script.js dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Lab Logo" class="footer-logo">
+                    <h3>SNN-Unit</h3>
+                    <p>Systems Neuroscience & Neurotechnology Unit</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <a href="index.html#videos">Videos</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="itm/guias.html">Guías</a>
+                    <a href="index.html#collaborate">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p>Saarbrücken, Germany</p>
+                    <p>Email: exchange@snn-unit.de</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">IG</a>
+                        <a href="https://www.youtube.com/@SNNUComm" target="_blank" rel="noopener noreferrer"
+                            aria-label="Youtube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7197c89933e74d23b2c9cda63f534531"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
