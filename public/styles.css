@@ -1217,7 +1217,6 @@ select option {
 .faq-subtitle {
     font-size: clamp(20px, 3vw, 48px);
     font-weight: 600;
-    white-space: nowrap;
 }
 
 .faq-logos {
