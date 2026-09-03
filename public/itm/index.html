@@ -33,7 +33,7 @@
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="guias.html" class="nav-link">Guías</a>
-                <a href="#collaborate" class="btn-primary-outline">Contact Lab</a>
+                <a href="#collaborate" class="btn-primary-outline">Contactar Lab</a>
             </div>
 
             <button class="mobile-menu-toggle" aria-label="Toggle Menu">
@@ -249,8 +249,8 @@
 
         <div class="container">
             <div class="section-header text-center fade-in-up" style="margin-bottom: 3rem;">
-                <h2>Join the <span class="text-gradient">SNN-Unit</span></h2>
-                <p>Generate a standardized application email to contact our Principal Investigators.</p>
+                <h2>Únete a la <span class="text-gradient">SNN-Unit</span></h2>
+                <p>Genera un correo de aplicación estandarizado para contactar a nuestros Investigadores Principales.</p>
             </div>
 
             <div class="contact-wrapper fade-in-up">
@@ -262,24 +262,22 @@
                             <!-- Name -->
                             <div class="form-group">
                                 <label for="studentName"
-                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Full
-                                    Name</label>
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Nombre Completo</label>
                                 <input type="text" id="studentName" required placeholder="Delio Perez"
                                     style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit;">
                             </div>
 
-                            <!-- Position of Interest -->
+                            <!-- Puesto de Interés -->
                             <div class="form-group">
                                 <label for="position"
-                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Position
-                                    of Interest</label>
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">Puesto de Interés</label>
                                 <select id="position" required
                                     style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
-                                    <option value="" disabled selected>Select a position...</option>
-                                    <option value="Ph.D. Student">Ph.D. Student</option>
-                                    <option value="Postdoctoral Researcher">Postdoctoral Researcher</option>
-                                    <option value="Master Thesis Student">Master Thesis Student</option>
-                                    <option value="Research Assistant">Research Assistant</option>
+                                    <option value="" disabled selected>Selecciona un puesto...</option>
+                                    <option value="Ph.D. Student">Estudiante de Doctorado (Ph.D.)</option>
+                                    <option value="Postdoctoral Researcher">Investigador Posdoctoral</option>
+                                    <option value="Master Thesis Student">Estudiante de Tesis de Maestría</option>
+                                    <option value="Research Assistant">Asistente de Investigación</option>
                                 </select>
                             </div>
                         </div>
@@ -291,8 +289,8 @@
                                 / Research Area of Interest</label>
                             <select id="lab" required
                                 style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; appearance: none;">
-                                <option value="" disabled selected>Select a lab...</option>
-                                <option value="Exchange Student">Exchange Students</option>
+                                <option value="" disabled selected>Selecciona un laboratorio...</option>
+                                <option value="Exchange Student">Estudiantes de Intercambio</option>
                                 <option value="Mindscan Lab (Dr. F. I. Corona-Strauss)">Mindscan Lab (Dr. F. I.
                                     Corona-Strauss)</option>
                             </select>
@@ -302,40 +300,40 @@
                         <div class="form-group" style="margin-bottom: 2rem;">
                             <label for="intro"
                                 style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-muted);">
-                                <span>Brief Introduction &amp; Motivation</span>
-                                <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 short paragraphs)</span>
+                                <span>Breve Introducción y Motivación</span>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 párrafos cortos)</span>
                             </label>
                             <textarea id="intro" required rows="6"
-                                placeholder="I am writing to express my interest in joining the SNN-Unit...&#10;&#10;My background is in [Field] and I have experience with...&#10;&#10;I am particularly interested in your work on..."
+                                placeholder="Escribo para expresar mi interés en unirme a la SNN-Unit...&#10;&#10;Tengo formación en [Campo] y experiencia en...&#10;&#10;Estoy particularmente interesado/a en su investigación sobre..."
                                 style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: var(--text-light); font-family: inherit; resize: vertical;"></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary w-100"
-                            style="width: 100%; justify-content: center; padding: 1rem;">Generate Email Draft</button>
+                            style="width: 100%; justify-content: center; padding: 1rem;">Generar Borrador de Correo</button>
                     </form>
                 </div>
 
                 <!-- Result Area (Hidden initially) -->
                 <div id="emailResult" class="glass-card contact-form-card"
                     style="display: none; border-top: 4px solid var(--primary-color);">
-                    <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem;">Preview &amp; Send</h3>
+                    <h3 style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.25rem;">Vista Previa y Enviar</h3>
 
                     <div
                         style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.9rem;">
-                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--text-muted);">To:</span> <span
+                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--text-muted);">Para:</span> <span
                                 id="outTo" style="color: var(--secondary-color);"></span></div>
-                        <div style="margin-bottom: 1rem;"><span style="color: var(--text-muted);">Subject:</span> <span
+                        <div style="margin-bottom: 1rem;"><span style="color: var(--text-muted);">Asunto:</span> <span
                                 id="outSubject" style="color: var(--text-light); font-weight: bold;"></span></div>
                         <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
-                            <span style="color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Body:</span>
+                            <span style="color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Cuerpo:</span>
                             <div id="outBody"
                                 style="color: var(--text-light); white-space: pre-wrap; line-height: 1.6;"></div>
                         </div>
                     </div>
 
                     <div class="contact-result-actions">
-                        <button onclick="copyEmailData()" class="btn-primary-outline">Copy Text</button>
-                        <a id="mailToLink" href="#" class="btn-primary">Open in Mail App</a>
+                        <button onclick="copyEmailData()" class="btn-primary-outline">Copiar Texto</button>
+                        <a id="mailToLink" href="#" class="btn-primary">Abrir en la App de Correo</a>
                     </div>
                 </div>
 
@@ -353,15 +351,15 @@
                     <p>Systems Neuroscience &amp; Neurotechnology Unit</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Categories</h4>
+                    <h4>Categorías</h4>
                     <a href="#videos">Videos</a>
                     <a href="faq.html">FAQ</a>
                     <a href="guias.html">Guías</a>
-                    <a href="#collaborate">Contact</a>
+                    <a href="#collaborate">Contacto</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Contact</h4>
-                    <p>Saarbrücken, Germany</p>
+                    <h4>Contacto</h4>
+                    <p>Saarbrücken, Alemania</p>
                     <p>Email: exchange@snn-unit.de</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer"
@@ -372,7 +370,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. All rights reserved.</p>
+                <p>&copy; 2026 Cognitive Neuroscience Lab — HTW Saar. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

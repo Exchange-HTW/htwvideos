@@ -37,7 +37,7 @@
 
             <!-- Botones -->
             <a href="#videos-section" class="roulette-btn pos-left"
-                onclick="smoothScroll(event, '#videos-section')">VIDEO</a>
+                onclick="smoothScroll(event, '#videos-section')">Video</a>
 
             <a href="#" class="roulette-btn pos-center logo-btn">
                 <img src="../images/anahuac.png" alt="Anáhuac Logo">
@@ -183,7 +183,7 @@
 
             <div class="anahuac-container" style="max-width: 800px; padding: 0;">
                 <div class="section-header text-center fade-in-up" style="margin-bottom: 3rem;">
-                    <h2 class="anahuac-title" style="text-align: center; margin-bottom: 10px;">Join the <span
+                    <h2 class="anahuac-title" style="text-align: center; margin-bottom: 10px;">Únete a la <span
                             class="text-gradient">SNN-Unit</span></h2>
                     <p style="color: #bbb; text-align: center;">Generate a standardized application email to contact our
                         Principal Investigators.</p>
@@ -199,24 +199,22 @@
                                 <!-- Name -->
                                 <div class="form-group">
                                     <label for="studentName"
-                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Full
-                                        Name</label>
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Nombre Completo</label>
                                     <input type="text" id="studentName" required placeholder="Tu Nombre Completo"
                                         style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit;">
                                 </div>
 
-                                <!-- Position of Interest -->
+                                <!-- Puesto de Interés -->
                                 <div class="form-group">
                                     <label for="position"
-                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Position
-                                        of Interest</label>
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">Puesto de Interés</label>
                                     <select id="position" required
                                         style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; appearance: none;">
-                                        <option value="" disabled selected>Select a position...</option>
+                                        <option value="" disabled selected>Selecciona un puesto...</option>
                                         <option value="Exchange Student">Exchange Student (Residencia)</option>
-                                        <option value="Ph.D. Student">Ph.D. Student</option>
-                                        <option value="Postdoctoral Researcher">Postdoctoral Researcher</option>
-                                        <option value="Master Thesis Student">Master Thesis Student</option>
+                                        <option value="Ph.D. Student">Estudiante de Doctorado (Ph.D.)</option>
+                                        <option value="Postdoctoral Researcher">Investigador Posdoctoral</option>
+                                        <option value="Master Thesis Student">Estudiante de Tesis de Maestría</option>
                                     </select>
                                 </div>
                             </div>
@@ -228,8 +226,8 @@
                                     / Research Area of Interest</label>
                                 <select id="lab" required
                                     style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; appearance: none;">
-                                    <option value="" disabled selected>Select a lab...</option>
-                                    <option value="Exchange Student">Exchange Students</option>
+                                    <option value="" disabled selected>Selecciona un laboratorio...</option>
+                                    <option value="Exchange Student">Estudiantes de Intercambio</option>
                                     <option value="Mindscan Lab (Dr. F. I. Corona-Strauss)">Mindscan Lab (Dr. F. I.
                                         Corona-Strauss)</option>
                                 </select>
@@ -239,11 +237,11 @@
                             <div class="form-group" style="margin-bottom: 2rem;">
                                 <label for="intro"
                                     style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 500; color: #fff;">
-                                    <span>Brief Introduction &amp; Motivation</span>
-                                    <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 short paragraphs)</span>
+                                    <span>Breve Introducción y Motivación</span>
+                                    <span style="font-size: 0.8rem; opacity: 0.7;">(2-3 párrafos cortos)</span>
                                 </label>
                                 <textarea id="intro" required rows="6"
-                                    placeholder="I am an engineering student from Universidad Anáhuac writing to express my interest in joining the SNN-Unit..."
+                                    placeholder="Soy un estudiante de ingeniería de la Universidad Anáhuac escribiendo para expresar mi interés en unirme a la SNN-Unit..."
                                     style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: #fff; font-family: inherit; resize: vertical;"></textarea>
                             </div>
 
@@ -261,13 +259,13 @@
 
                         <div
                             style="background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-family: monospace; font-size: 0.9rem;">
-                            <div style="margin-bottom: 0.5rem;"><span style="color: #bbb;">To:</span> <span id="outTo"
+                            <div style="margin-bottom: 0.5rem;"><span style="color: #bbb;">Para:</span> <span id="outTo"
                                     style="color: #fff;"></span></div>
-                            <div style="margin-bottom: 1rem;"><span style="color: #bbb;">Subject:</span> <span
+                            <div style="margin-bottom: 1rem;"><span style="color: #bbb;">Asunto:</span> <span
                                     id="outSubject" style="color: var(--anahuac-orange); font-weight: bold;"></span>
                             </div>
                             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
-                                <span style="color: #bbb; display: block; margin-bottom: 0.5rem;">Body:</span>
+                                <span style="color: #bbb; display: block; margin-bottom: 0.5rem;">Cuerpo:</span>
                                 <div id="outBody" style="color: #eee; white-space: pre-wrap; line-height: 1.6;"></div>
                             </div>
                         </div>
@@ -302,8 +300,8 @@
         </div>
 
         <div class="af-col af-col-right">
-            <strong>Contact</strong>
-            <p>Saarbrücken, Germany</p>
+            <strong>Contacto</strong>
+            <p>Saarbrücken, Alemania</p>
             <p>Email: exchange@snn-unit.de</p>
             <div class="af-socials">
                 <a href="https://www.instagram.com/snnucomm" target="_blank" rel="noopener noreferrer">IG</a>
